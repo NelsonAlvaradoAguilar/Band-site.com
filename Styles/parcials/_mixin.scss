@@ -1,0 +1,41 @@
+
+@import"./variables";
+
+
+@mixin bodydisplay{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight:400 ;
+    padding-left:16px ;
+    padding-right: 16px;
+    font-family: 'Roboto Slab', serif;
+}
+
+@mixin list{
+list-style: none;
+padding-right: 0rem;
+
+}
+
+@mixin PageHeader{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold 700;
+}
+@mixin SectionHeader{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold 700;
+    font-family: 'Roboto Slab', serif;
+}
+
+@mixin Subheader{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif
+}
