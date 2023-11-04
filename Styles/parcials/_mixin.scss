@@ -1,41 +1,50 @@
 
 @import"./variables";
 
+@font-face {
+    font-family:Avenir Next Regular  ;
+    src: url(../Assets/Font/AvenirNextLTPro.ttf);
+}
+@font-face {
+    font-family:Avenir Next Demi  ;
+    src: url(../Assets/Font/AvenirNextLTProDemi.ttf);
+}
+@font-face {
+    font-family:Avenir Next bold   ;
+    src: url(../Assets/Font/AvenirNextLTProBold.ttf);
+}
 
 @mixin bodydisplay{
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight:400 ;
-    padding-left:16px ;
-    padding-right: 16px;
-    font-family: 'Roboto Slab', serif;
+    flex-direction: column;  
+    font-size: 0.81rem;
+    line-height: 1.1rem;
+    margin: 0%;
+    font-family:Avenir Next Regular  ;  
 }
 
-@mixin list{
+@mixin list__anchor {
 list-style: none;
-padding-right: 0rem;
-
+padding-left: 0rem;
+text-decoration: none;
 }
 
-@mixin PageHeader{
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: bold 700;
+@mixin PageHeaderMobile{
+    font-size: 1.5rem;
+    line-height: 2rem;  
+    font-family: Avenir Next bold   ;
 }
-@mixin SectionHeader{
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: bold 700;
-    font-family: 'Roboto Slab', serif;
+@mixin SectionHeaderMobile{
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    line-height: 2rem;
+    font-family: Avenir Next bold  ;
 }
 
 @mixin Subheader{
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif
+    font-size: 0.87rem;
+    line-height: 1.37rem;   
+    font-family:Avenir Next Demi  ;
+    
 }

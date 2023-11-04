@@ -1,8 +1,12 @@
 @import"./parcials/mixin";
 @import"./parcials/variables";
 
+
+
+
 body {
     @include bodydisplay();
+
 
     .header {
         background-color: #323232;
@@ -10,36 +14,114 @@ body {
         flex-direction: column;
         align-items: center;
 
+        padding-top: 24px;
+
+        .logo {
+            display: flex;
+            padding-left: 1rem;
+        }
+
         &__nav {
             width: 100%;
 
             &--link {
+                margin: 0%;
+                @include list__anchor();
                 color: $bandsSecCtext;
                 display: flex;
                 width: 100%;
                 justify-content: space-around;
+                @include Subheader();
 
-
-
+                .bio__title {
+                    display: flex;
+                    justify-content: center;
+                    border-bottom: 4px solid #fff;
+                    padding-bottom: 1.5rem;
+                    /* width: calc(.50*100%);*/
+                    width: 12.1rem;
+                }
 
                 li {
-                    display: flex;
-                    @include SectionHeader();
-                    text-align: center;
-                    justify-content: center;
-                    @include list();
 
-                    a {
-                        text-decoration: none;
+                    width: 12.1rem;
+
+                    .shows__title {
+                        display: flex;
+                        justify-content: center;
                         color: $bandsSecCtext;
+                        @include list__anchor();
+                        /*width: calc(.60*100%);*/
+
+                        padding-bottom: 1.5rem;
                     }
+
                 }
 
-                .current__page {
-                    border-bottom: 4px solid white;
-                    display: flex;
-                    text-align: center;
-                }
+            }
+        }
+    }
+
+    .bio__hero {
+        background-image: url(../Assets/Images/hero-bio.jpg);
+        background-size: cover;
+        height: 15rem;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &--overlay {
+            background-color: rgba(50, 50, 50, 0.5);
+            height: 15rem;
+            width: 100%;
+        }
+
+
+        &--text {
+            @include PageHeaderMobile;
+            color: $bandsSecCtext ;
+            position: relative;
+            top: 5.5rem;
+            left: 1.5rem;
+            display: inline-block;
+
+        }
+
+    }
+
+    .biography {
+        display: flex;
+        flex-direction: column;
+        padding-right: 1rem;
+        padding-left: 1rem;
+
+
+        &__header {
+            @include SectionHeaderMobile();
+        }
+    
+        &__paragraph{
+            font-family: Avenir Next Demi;
+        }
+
+        &__article{
+            &--header{
+                @include Subheader();
+            }
+        }
+
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        width: 175px;
+
+        &__container {
+            @include list__anchor();
+
+            &--img {
+                width: 390px;
             }
         }
     }

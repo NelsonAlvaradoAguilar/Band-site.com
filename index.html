@@ -8,33 +8,38 @@
     <link rel="stylesheet" href="Styles/bio.css">
 
 
+
+
 </head>
 
 <body>
     <header class="header">
-        <a class="logo" href="index.html"><img  src="Assets/Logo/Logo-bandsite.svg" alt="logo"></a>
+        <a class="logo" href="index.html"><img src="Assets/Logo/Logo-bandsite.svg" alt="logo"></a>
         <nav class="header__nav">
             <ul class="header__nav--link">
-                <li class="current__page">Biography</li>
-                <li><a href="">Shows</a></li>
+                <li class="bio__title">Biography</li>
+                <li><a class="shows__title" href="">Shows</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="bio__hero">
-        <h1>The Bees Knees</h1>
+        <div class="bio__hero--overlay">
+            <h1 class="bio__hero--text">The Bees Knees</h1>
+        </div>
+        
     </section>
 
-    <section>
-        <div>
-            <h2>About the Musicians</h2>
+    <section class="biography">
 
-            <img src="Assets/Images/band.jpg" alt="band.jpg">
-            <p>"We push each other to be the best. It's not uncommon for one of us say 'this needs to be better, back to
-                the drawing board'"<br>-Bryan Teddy, lead vocalist of bees Knees</p>
-        </div>
-        <article>
-            <h3>The Bees Knees</h3>
+        <h2 class="biography__header">About the Musicians</h2>
+
+        <img class="biography__img" src="Assets/Images/band.jpg" alt="band.jpg">
+        <p class="biography__paragraph">"We push each other to be the best. It's not uncommon for one of us say 'this needs to be better, back to
+            the drawing board'"<br>-Bryan Teddy, lead vocalist of bees Knees</p>
+
+        <article class="biography__article">
+            <h3 class="biography__article--header">The Bees Knees</h3>
             <p>The Bees Knees is a pop rock band originating from San Francisco, California. The band consists of lead
                 vocalist Bryan Teddy, guitarist Mark Tolkens, guitaristAndrew Green, bassist Kent Zulkee and drummer
                 Freddie Fischer. the band achieved its first commercial success as an unsigned act, drawing attention
@@ -54,16 +59,17 @@
 
     <section class="gallery">
         <h2>Photo Gallery</h2>
-
-        <img src="Assets/Images/Photo-gallery-1.jpg" alt="">
-        <img src="Assets/Images/Photo-gallery-2.jpg" alt="">
-        <img src="Assets/Images/Photo-gallery-3.jpg" alt="">
-        <img src="Assets/Images/Photo-gallery-4.jpg" alt="">
-        <img src="Assets/Images/Photo-gallery-5.jpg" alt="">
-        <img src="Assets/Images/Photo-gallery-6.jpg" alt="">
-        <img src="Assets/Images/Photo-gallery-7.jpg" alt="">
-        <img src="Assets/Images/Photo-gallery-8.jpg" alt="">
-        <img src="Assets/Images/Photo-gallery-9.jpg" alt="">
+        <ul class="gallery__container">
+            <li><img class="gallery__container--img" src="Assets/Images/Photo-gallery-1.jpg" alt=""></li>
+            <li> <img class="gallery__container--img" src="Assets/Images/Photo-gallery-2.jpg" alt=""></li>
+            <li><img class="gallery__container--img" src="Assets/Images/Photo-gallery-3.jpg" alt=""></li>
+            <li> <img class="gallery__container--img" src="Assets/Images/Photo-gallery-4.jpg" alt=""></li>
+            <li> <img class="gallery__container--img" src="Assets/Images/Photo-gallery-5.jpg" alt=""></li>
+            <li><img class="gallery__container--img" src="Assets/Images/Photo-gallery-6.jpg" alt=""></li>
+            <li><img class="gallery__container--img" src="Assets/Images/Photo-gallery-7.jpg" alt=""></li>
+            <li><img class="gallery__container--img" src="Assets/Images/Photo-gallery-8.jpg" alt=""></li>
+            <li><img class="gallery__container--img" src="Assets/Images/Photo-gallery-9.jpg" alt=""></li>
+        </ul>
     </section>
     <footer>
         <div>
@@ -74,17 +80,20 @@
         </div>
         <div>
             <h3>Cam Adams <br><Span>The Bees Knees Management</Span></h3>
-            <p>503 Broadway Penthouse,<br><span>New York, NY 10012,USA</span><br><a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></p>
+            <p>503 Broadway Penthouse,<br><span>New York, NY 10012,USA</span><br><a
+                    href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></p>
         </div>
-       
+
         <div>
             <h3>Pearl Pearl Greg <br><Span>Limitless Artist Group</Span></h3>
-            <p>Booking Agent for<br><span>US/South America / Japan</span><br><a href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a></p>
+            <p>Booking Agent for<br><span>US/South America / Japan</span><br><a
+                    href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a></p>
         </div>
 
         <div>
             <h3>Carson Whyte <br><Span>ARCH Entertainment</Span></h3>
-            <p>Booking Agent for<br><span>UK / EU / AU</span><br><a href="mailto:info@thebeesknees.com">cwhyte@archentertainment.com</a></p>
+            <p>Booking Agent for<br><span>UK / EU / AU</span><br><a
+                    href="mailto:info@thebeesknees.com">cwhyte@archentertainment.com</a></p>
         </div>
 
         <div><img src="Assets/Logo/Logo-bandsite.svg" alt="logo"></div>

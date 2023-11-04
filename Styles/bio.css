@@ -1,47 +1,125 @@
+@font-face {
+  font-family: Avenir Next Regular;
+  src: url(../Assets/Font/AvenirNextLTPro.ttf);
+}
+@font-face {
+  font-family: Avenir Next Demi;
+  src: url(../Assets/Font/AvenirNextLTProDemi.ttf);
+}
+@font-face {
+  font-family: Avenir Next bold;
+  src: url(../Assets/Font/AvenirNextLTProBold.ttf);
+}
 body {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  padding-left: 16px;
-  padding-right: 16px;
-  font-family: "Roboto Slab", serif;
+  font-size: 0.81rem;
+  line-height: 1.1rem;
+  margin: 0%;
+  font-family: Avenir Next Regular;
 }
 body .header {
   background-color: #323232;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 24px;
+}
+body .header .logo {
+  display: flex;
+  padding-left: 1rem;
 }
 body .header__nav {
   width: 100%;
 }
 body .header__nav--link {
+  margin: 0%;
+  list-style: none;
+  padding-left: 0rem;
+  text-decoration: none;
   color: #FFFFFF;
   display: flex;
   width: 100%;
   justify-content: space-around;
+  font-size: 0.87rem;
+  line-height: 1.37rem;
+  font-family: Avenir Next Demi;
+}
+body .header__nav--link .bio__title {
+  display: flex;
+  justify-content: center;
+  border-bottom: 4px solid #fff;
+  padding-bottom: 1.5rem;
+  /* width: calc(.50*100%);*/
+  width: 12.1rem;
 }
 body .header__nav--link li {
+  width: 12.1rem;
+}
+body .header__nav--link li .shows__title {
   display: flex;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: bold 700;
-  font-family: "Roboto Slab", serif;
-  text-align: center;
   justify-content: center;
-  list-style: none;
-  padding-right: 0rem;
-}
-body .header__nav--link li a {
-  text-decoration: none;
   color: #FFFFFF;
+  list-style: none;
+  padding-left: 0rem;
+  text-decoration: none;
+  /*width: calc(.60*100%);*/
+  padding-bottom: 1.5rem;
 }
-body .header__nav--link .current__page {
-  border-bottom: 4px solid white;
+body .bio__hero {
+  background-image: url(../Assets/Images/hero-bio.jpg);
+  background-size: cover;
+  height: 15rem;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body .bio__hero--overlay {
+  background-color: rgba(50, 50, 50, 0.5);
+  height: 15rem;
+  width: 100%;
+}
+body .bio__hero--text {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: Avenir Next bold;
+  color: #FFFFFF;
+  position: relative;
+  top: 5.5rem;
+  left: 1.5rem;
+  display: inline-block;
+}
+body .biography {
   display: flex;
-  text-align: center;
+  flex-direction: column;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+body .biography__header {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  line-height: 2rem;
+  font-family: Avenir Next bold;
+}
+body .biography__paragraph {
+  font-family: Avenir Next Demi;
+}
+body .biography__article--header {
+  font-size: 0.87rem;
+  line-height: 1.37rem;
+  font-family: Avenir Next Demi;
+}
+body .gallery {
+  display: flex;
+  flex-direction: column;
+  width: 175px;
+}
+body .gallery__container {
+  list-style: none;
+  padding-left: 0rem;
+  text-decoration: none;
+}
+body .gallery__container--img {
+  width: 390px;
 }/*# sourceMappingURL=bio.css.map */
