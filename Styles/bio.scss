@@ -2,8 +2,6 @@
 @import"./parcials/variables";
 
 
-
-
 body {
     @include bodydisplay();
 
@@ -13,12 +11,25 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 1.5rem;
+        width: 100%;
 
-        padding-top: 24px;
-
-        .logo {
+        @include tablet {
             display: flex;
-            padding-left: 1rem;
+            flex-direction: row;
+     
+        }
+
+        &__logo {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &--img {
+                height: 1.3rem;
+                text-align: center
+            }
         }
 
         &__nav {
@@ -30,36 +41,41 @@ body {
                 color: $bandsSecCtext;
                 display: flex;
                 width: 100%;
-                justify-content: space-around;
-                @include Subheader();
+                justify-content: space-evenly;
 
                 .bio__title {
                     display: flex;
                     justify-content: center;
                     border-bottom: 4px solid #fff;
-                    padding-bottom: 1.5rem;
-                    /* width: calc(.50*100%);*/
-                    width: 12.1rem;
+                    padding: 0.6rem;
+                    width: calc(.89*100%);
+                    @include Subheadermobile();
+
                 }
 
                 li {
-
-                    width: 12.1rem;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
 
                     .shows__title {
                         display: flex;
-                        justify-content: center;
+                        align-items: center;
                         color: $bandsSecCtext;
                         @include list__anchor();
-                        /*width: calc(.60*100%);*/
+                        justify-content: center;
+                        width: 100%;
+                        padding: 0.6rem;
+                        font-family: Avenir Next Regular;
 
-                        padding-bottom: 1.5rem;
                     }
-
                 }
 
             }
+
+
         }
+
     }
 
     .bio__hero {
@@ -76,13 +92,12 @@ body {
             width: 100%;
         }
 
-
         &--text {
             @include PageHeaderMobile;
             color: $bandsSecCtext ;
             position: relative;
             top: 5.5rem;
-            left: 1.5rem;
+            left: 1rem;
             display: inline-block;
 
         }
@@ -99,30 +114,87 @@ body {
         &__header {
             @include SectionHeaderMobile();
         }
-    
-        &__paragraph{
+
+        &__paragraph {
             font-family: Avenir Next Demi;
         }
 
-        &__article{
-            &--header{
-                @include Subheader();
+        &__article {
+            &--header {
+                @include Subheadermobile();
             }
+
+            &--paragraph {
+                @include bodytext();
+            }
+
         }
 
     }
 
     .gallery {
+        background-color: $altbgcolor ;
         display: flex;
         flex-direction: column;
-        width: 175px;
+
+        &__title {
+            @include SectionHeaderMobile();
+            padding-right: 1rem;
+            padding-left: 1rem;
+            margin: 0%;
+        }
 
         &__container {
             @include list__anchor();
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            margin: 0%;
 
             &--img {
-                width: 390px;
+                width: 100%;
+                padding-bottom: 1rem;
+            }
+
+        }
+
+    }
+
+    .footer {
+        color: $bandsSecCtext ;
+        background-color: $bandsprimCtext;
+        padding: 1rem;
+        @include footertext();
+
+        &__title {
+            @include SectionHeaderMobile();
+        }
+
+        &__icons {
+            display: flex;
+            justify-content: space-between;
+            width: 8rem;
+        }
+
+        &__contacts {
+
+            &--email {
+                @include list__anchor();
+                color: $bandsSecCtext ;
+            }
+
+        }
+
+        &__logo {
+            padding-top: 4rem;
+
+            &--paragraph {
+                margin-bottom: 0%;
             }
         }
+
     }
+
 }

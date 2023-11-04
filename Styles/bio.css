@@ -1,33 +1,43 @@
 @font-face {
   font-family: Avenir Next Regular;
-  src: url(../Assets/Font/AvenirNextLTPro.ttf);
+  src: url(../Assets/Font/AvenirNextLTPro-Regular.otf);
 }
 @font-face {
   font-family: Avenir Next Demi;
-  src: url(../Assets/Font/AvenirNextLTProDemi.ttf);
+  src: url(../Assets/Font/AvenirNextLTPro-Demi.otf);
 }
 @font-face {
   font-family: Avenir Next bold;
-  src: url(../Assets/Font/AvenirNextLTProBold.ttf);
+  src: url(../Assets/Font/AvenirNextLTPro-Bold.otf);
 }
 body {
   display: flex;
   flex-direction: column;
-  font-size: 0.81rem;
-  line-height: 1.1rem;
   margin: 0%;
-  font-family: Avenir Next Regular;
 }
 body .header {
   background-color: #323232;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 24px;
+  padding-top: 1.5rem;
+  width: 100%;
 }
-body .header .logo {
+@media screen and (min-width: 768px) {
+  body .header {
+    display: flex;
+    flex-direction: row;
+  }
+}
+body .header__logo {
+  width: 100%;
   display: flex;
-  padding-left: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+body .header__logo--img {
+  height: 1.3rem;
+  text-align: center;
 }
 body .header__nav {
   width: 100%;
@@ -40,31 +50,34 @@ body .header__nav--link {
   color: #FFFFFF;
   display: flex;
   width: 100%;
-  justify-content: space-around;
-  font-size: 0.87rem;
-  line-height: 1.37rem;
-  font-family: Avenir Next Demi;
+  justify-content: space-evenly;
 }
 body .header__nav--link .bio__title {
   display: flex;
   justify-content: center;
   border-bottom: 4px solid #fff;
-  padding-bottom: 1.5rem;
-  /* width: calc(.50*100%);*/
-  width: 12.1rem;
+  padding: 0.6rem;
+  width: 89%;
+  font-size: 0.87rem;
+  line-height: 1.37rem;
+  font-family: Avenir Next Demi;
 }
 body .header__nav--link li {
-  width: 12.1rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 body .header__nav--link li .shows__title {
   display: flex;
-  justify-content: center;
+  align-items: center;
   color: #FFFFFF;
   list-style: none;
   padding-left: 0rem;
   text-decoration: none;
-  /*width: calc(.60*100%);*/
-  padding-bottom: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0.6rem;
+  font-family: Avenir Next Regular;
 }
 body .bio__hero {
   background-image: url(../Assets/Images/hero-bio.jpg);
@@ -86,7 +99,7 @@ body .bio__hero--text {
   color: #FFFFFF;
   position: relative;
   top: 5.5rem;
-  left: 1.5rem;
+  left: 1rem;
   display: inline-block;
 }
 body .biography {
@@ -99,6 +112,7 @@ body .biography__header {
   font-size: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
+  margin: 0%;
   line-height: 2rem;
   font-family: Avenir Next bold;
 }
@@ -110,16 +124,72 @@ body .biography__article--header {
   line-height: 1.37rem;
   font-family: Avenir Next Demi;
 }
+body .biography__article--paragraph {
+  font-size: 0.81rem;
+  line-height: 1.125rem;
+  font-family: Avenir Next Regular;
+}
 body .gallery {
+  background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
-  width: 175px;
+}
+body .gallery__title {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  margin: 0%;
+  line-height: 2rem;
+  font-family: Avenir Next bold;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0%;
 }
 body .gallery__container {
   list-style: none;
   padding-left: 0rem;
   text-decoration: none;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0%;
 }
 body .gallery__container--img {
-  width: 390px;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+body .footer {
+  color: #FFFFFF;
+  background-color: #323232;
+  padding: 1rem;
+  font-size: 0.81rem;
+  line-height: 1.125rem;
+  font-family: Avenir Next Regular;
+}
+body .footer__title {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  margin: 0%;
+  line-height: 2rem;
+  font-family: Avenir Next bold;
+}
+body .footer__icons {
+  display: flex;
+  justify-content: space-between;
+  width: 8rem;
+}
+body .footer__contacts--email {
+  list-style: none;
+  padding-left: 0rem;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+body .footer__logo {
+  padding-top: 4rem;
+}
+body .footer__logo--paragraph {
+  margin-bottom: 0%;
 }/*# sourceMappingURL=bio.css.map */

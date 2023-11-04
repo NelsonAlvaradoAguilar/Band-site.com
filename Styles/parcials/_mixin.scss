@@ -3,24 +3,24 @@
 
 @font-face {
     font-family:Avenir Next Regular  ;
-    src: url(../Assets/Font/AvenirNextLTPro.ttf);
-}
+    src: url(../Assets/Font/AvenirNextLTPro-Regular.otf);
+};
 @font-face {
     font-family:Avenir Next Demi  ;
-    src: url(../Assets/Font/AvenirNextLTProDemi.ttf);
-}
+    src: url(../Assets/Font/AvenirNextLTPro-Demi.otf);
+};
 @font-face {
     font-family:Avenir Next bold   ;
-    src: url(../Assets/Font/AvenirNextLTProBold.ttf);
-}
+    src: url(../Assets/Font/AvenirNextLTPro-Bold.otf);
+};
 
 @mixin bodydisplay{
     display: flex;
     flex-direction: column;  
-    font-size: 0.81rem;
-    line-height: 1.1rem;
+    
     margin: 0%;
-    font-family:Avenir Next Regular  ;  
+ 
+    
 }
 
 @mixin list__anchor {
@@ -38,13 +38,36 @@ text-decoration: none;
     font-size: 1.5rem;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
+    margin: 0%;
     line-height: 2rem;
     font-family: Avenir Next bold  ;
 }
 
-@mixin Subheader{
+@mixin Subheadermobile{
     font-size: 0.87rem;
     line-height: 1.37rem;   
-    font-family:Avenir Next Demi  ;
-    
+    font-family: Avenir Next Demi ;   
 }
+@mixin bodytext{
+    font-size: 0.81rem;
+    line-height: 1.125rem;
+    font-family:Avenir Next Regular;
+}
+
+@mixin footertext{
+font-size: 0.81rem;
+line-height: 1.125rem;
+font-family:Avenir Next Regular;
+}
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
