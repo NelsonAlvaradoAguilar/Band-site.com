@@ -1,73 +1,127 @@
-
 @import"./variables";
 
 @font-face {
-    font-family:Avenir Next Regular  ;
+    font-family: Avenir Next Regular;
     src: url(../Assets/Font/AvenirNextLTPro-Regular.otf);
-};
+}
+
+;
+
 @font-face {
-    font-family:Avenir Next Demi  ;
+    font-family: Avenir Next Demi;
     src: url(../Assets/Font/AvenirNextLTPro-Demi.otf);
-};
+}
+
+;
+
 @font-face {
-    font-family:Avenir Next bold   ;
+    font-family: Avenir Next bold;
     src: url(../Assets/Font/AvenirNextLTPro-Bold.otf);
-};
+}
 
-@mixin bodydisplay{
+;
+@mixin hero-settings {
+  
+   
+  /*  height: calc(.20*100vh);*/
+  
+   
+
+}
+@mixin bodydisplay {
     display: flex;
-    flex-direction: column;  
-    
+    flex-direction: column;
     margin: 0%;
- 
-    
+
+
 }
 
-@mixin list__anchor {
-list-style: none;
-padding-left: 0rem;
-text-decoration: none;
+@mixin list__anchor--decoration {
+    list-style: none;
+    padding-left: 0rem;
+    text-decoration: none;
 }
 
-@mixin PageHeaderMobile{
+@mixin PageHeaderMobile {
     font-size: 1.5rem;
-    line-height: 2rem;  
-    font-family: Avenir Next bold   ;
+    line-height: 2rem;
+    font-family: Avenir Next bold;
 }
-@mixin SectionHeaderMobile{
+
+
+@mixin SectionHeaderMobile {
     font-size: 1.5rem;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
     margin: 0%;
     line-height: 2rem;
-    font-family: Avenir Next bold  ;
+    font-family: Avenir Next bold;
 }
 
-@mixin Subheadermobile{
+@mixin Subheadermobile {
     font-size: 0.87rem;
-    line-height: 1.37rem;   
-    font-family: Avenir Next Demi ;   
+    line-height: 1.37rem;
+    font-family: Avenir Next Demi;
 }
-@mixin bodytext{
+
+
+@mixin bodytext {
     font-size: 0.81rem;
     line-height: 1.125rem;
-    font-family:Avenir Next Regular;
+    font-family: Avenir Next Regular;
 }
 
-@mixin footertext{
-font-size: 0.81rem;
-line-height: 1.125rem;
-font-family:Avenir Next Regular;
+
+
+@mixin footertext {
+    font-size: 0.81rem;
+    line-height: 1.125rem;
+    font-family: Avenir Next Regular;
 }
+
+
 
 @mixin tablet {
     @media screen and (min-width: $tablet-breakpoint) {
-      @content;
+        @content;
     }
-  }
-  
-  @mixin desktop {
+}
+
+@mixin pageHeaderTablet {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-family: Avenir Next bold;
+}
+
+@mixin SectionHeaderTablet {
+    font-size: 2.25rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+    margin: 0%;
+    line-height: 2.75rem;
+    font-family: Avenir Next bold;
+}
+
+@mixin SubheaderTablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: Avenir Next Demi;
+}
+
+@mixin bodytextTablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: Avenir Next Regular;
+}
+
+@mixin footertextTablet {
+    font-size: 0.87rem;
+    line-height: 1.25rem;
+    font-family: Avenir Next Regular;
+}
+
+@mixin desktop {
     @media screen and (min-width: $desktop-breakpoint) {
-      @content;
+        @content;
     }
-  }
+}

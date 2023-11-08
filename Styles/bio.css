@@ -19,14 +19,13 @@ body .header {
   background-color: #323232;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding-top: 1.5rem;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
   body .header {
-    display: flex;
     flex-direction: row;
+    padding: 0%;
   }
 }
 body .header__logo {
@@ -35,64 +34,71 @@ body .header__logo {
   align-items: center;
   justify-content: center;
 }
+@media screen and (min-width: 768px) {
+  body .header__logo {
+    width: 25%;
+  }
+}
 body .header__logo--img {
-  height: 1.3rem;
+  height: 1.25rem;
   text-align: center;
 }
 body .header__nav {
-  width: 100%;
-}
-body .header__nav--link {
-  margin: 0%;
-  list-style: none;
-  padding-left: 0rem;
-  text-decoration: none;
-  color: #FFFFFF;
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
 }
-body .header__nav--link .bio__title {
+@media screen and (min-width: 768px) {
+  body .header__nav {
+    width: 30%;
+  }
+}
+body .header__unlist-container {
+  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  border-bottom: 4px solid #fff;
-  padding: 0.6rem;
-  width: 89%;
+  padding: 0%;
+  margin: 0%;
   font-size: 0.87rem;
   line-height: 1.37rem;
   font-family: Avenir Next Demi;
 }
-body .header__nav--link li {
+body .header__links {
   display: flex;
   width: 100%;
   justify-content: center;
-}
-body .header__nav--link li .shows__title {
-  display: flex;
-  align-items: center;
-  color: #FFFFFF;
   list-style: none;
   padding-left: 0rem;
   text-decoration: none;
-  justify-content: center;
-  width: 100%;
-  padding: 0.6rem;
-  font-family: Avenir Next Regular;
+  color: #AFAFAF;
+}
+@media screen and (min-width: 768px) {
+  body .header__links {
+    width: 70%;
+    align-items: center;
+  }
+}
+body .header__links--subtitle-border {
+  list-style: none;
+  padding-left: 0rem;
+  text-decoration: none;
+  border-bottom: 4px solid #fff;
+  color: #FFFFFF;
 }
 body .bio__hero {
-  background-image: url(../Assets/Images/hero-bio.jpg);
+  background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../Assets/Images/hero-bio.jpg);
   background-size: cover;
   height: 15rem;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
-body .bio__hero--overlay {
-  background-color: rgba(50, 50, 50, 0.5);
-  height: 15rem;
-  width: 100%;
+@media screen and (min-width: 768px) {
+  body .bio__hero {
+    height: 58vw;
+    background-position: bottom;
+  }
 }
-body .bio__hero--text {
+body .bio__hero--band-name {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: Avenir Next bold;
@@ -102,11 +108,30 @@ body .bio__hero--text {
   left: 1rem;
   display: inline-block;
 }
+@media screen and (min-width: 768px) {
+  body .bio__hero--band-name {
+    position: relative;
+    top: 8rem;
+    left: 3rem;
+    font-size: 2.25rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+    margin: 0%;
+    line-height: 2.75rem;
+    font-family: Avenir Next bold;
+  }
+}
 body .biography {
   display: flex;
   flex-direction: column;
   padding-right: 1rem;
   padding-left: 1rem;
+}
+@media screen and (min-width: 768px) {
+  body .biography {
+    padding-right: 7.5rem;
+    padding-left: 7.5rem;
+  }
 }
 body .biography__header {
   font-size: 1.5rem;
@@ -116,23 +141,80 @@ body .biography__header {
   line-height: 2rem;
   font-family: Avenir Next bold;
 }
-body .biography__paragraph {
+@media screen and (min-width: 768px) {
+  body .biography__header {
+    font-size: 2.25rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+    margin: 0%;
+    line-height: 2.75rem;
+    font-family: Avenir Next bold;
+    position: relative;
+    right: 3.5rem;
+  }
+}
+body .biography .biography__img {
+  background-image: linear-gradient(to right, rgba(50, 50, 50, 0.2), rgba(50, 50, 50, 0.2)), url(../Assets/Images/band.jpg);
+  height: 48vw;
+  background-size: cover;
+  background-position: bottom;
+}
+@media screen and (min-width: 768px) {
+  body .biography .biography__img {
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+  }
+}
+body .biography__quote {
   font-family: Avenir Next Demi;
 }
-body .biography__article--header {
+@media screen and (min-width: 768px) {
+  body .biography__quote--credit-line {
+    font-family: Avenir Next Regular;
+  }
+}
+body .biography__content {
+  font-size: 0.81rem;
+  line-height: 1.125rem;
+  font-family: Avenir Next Regular;
+}
+@media screen and (min-width: 768px) {
+  body .biography__content {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: Avenir Next Regular;
+  }
+}
+body .biography__content--subheader {
   font-size: 0.87rem;
   line-height: 1.37rem;
   font-family: Avenir Next Demi;
 }
-body .biography__article--paragraph {
-  font-size: 0.81rem;
-  line-height: 1.125rem;
-  font-family: Avenir Next Regular;
+@media screen and (min-width: 768px) {
+  body .biography__content--subheader {
+    font-family: Avenir Next bold;
+  }
+}
+@media screen and (min-width: 768px) {
+  body .biography__content--body-text {
+    display: flex;
+    gap: 1.87rem;
+  }
 }
 body .gallery {
   background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+@media screen and (min-width: 768px) {
+  body .gallery {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 1.5rem;
+  }
 }
 body .gallery__title {
   font-size: 1.5rem;
@@ -141,34 +223,66 @@ body .gallery__title {
   margin: 0%;
   line-height: 2rem;
   font-family: Avenir Next bold;
-  padding-right: 1rem;
-  padding-left: 1rem;
   margin: 0%;
+}
+@media screen and (min-width: 768px) {
+  body .gallery__title {
+    font-size: 2.25rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+    margin: 0%;
+    line-height: 2.75rem;
+    font-family: Avenir Next bold;
+    margin: 0%;
+  }
 }
 body .gallery__container {
   list-style: none;
   padding-left: 0rem;
   text-decoration: none;
   display: flex;
-  height: 100%;
   flex-direction: column;
-  padding-right: 1rem;
-  padding-left: 1rem;
   margin: 0%;
+}
+@media screen and (min-width: 768px) {
+  body .gallery__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 body .gallery__container--img {
   width: 100%;
   padding-bottom: 1rem;
 }
+@media screen and (min-width: 768px) {
+  body .gallery__container--img {
+    height: 8rem;
+  }
+}
 body .footer {
+  display: flex;
+  flex-direction: column;
   color: #FFFFFF;
   background-color: #323232;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-size: 0.81rem;
   line-height: 1.125rem;
   font-family: Avenir Next Regular;
 }
-body .footer__title {
+@media screen and (min-width: 768px) {
+  body .footer {
+    font-size: 0.87rem;
+    line-height: 1.25rem;
+    font-family: Avenir Next Regular;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+  }
+}
+body .footer__section-title {
+  display: flex;
   font-size: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
@@ -176,10 +290,48 @@ body .footer__title {
   line-height: 2rem;
   font-family: Avenir Next bold;
 }
+@media screen and (min-width: 768px) {
+  body .footer__section-title {
+    font-size: 2.25rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+    margin: 0%;
+    line-height: 2.75rem;
+    font-family: Avenir Next bold;
+    width: 45%;
+    padding-bottom: 0%;
+  }
+}
 body .footer__icons {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  width: 8rem;
+  width: 40%;
+}
+@media screen and (min-width: 768px) {
+  body .footer__icons {
+    width: 25%;
+    justify-content: space-around;
+    position: relative;
+    bottom: 1.8rem;
+    left: 14rem;
+  }
+}
+body .footer__contacts {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  body .footer__contacts {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  body .footer__contacts--information {
+    width: 26vw;
+  }
 }
 body .footer__contacts--email {
   list-style: none;
@@ -188,7 +340,17 @@ body .footer__contacts--email {
   color: #FFFFFF;
 }
 body .footer__logo {
-  padding-top: 4rem;
+  display: flex;
+  padding-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  body .footer__logo {
+    width: 25%;
+    padding: 0%;
+    position: relative;
+    bottom: 12.2rem;
+    left: 36.5rem;
+  }
 }
 body .footer__logo--paragraph {
   margin-bottom: 0%;
