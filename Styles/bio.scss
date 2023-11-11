@@ -5,6 +5,11 @@
 body {
     @include bodydisplay();
 
+    @include tablet {
+    @include bodytextTablet();
+
+    }
+
 
     .header {
         background-color: #323232;
@@ -15,10 +20,12 @@ body {
 
         @include tablet {
             flex-direction: row;
-            padding: 0%;
 
+            align-items: normal;
 
         }
+
+        @include desktop {}
 
 
 
@@ -27,14 +34,22 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
+            padding-bottom: 1rem;
 
             @include tablet {
                 width: 25%;
+                padding-bottom: 1.5rem;
 
             }
 
+            @include desktop {
+                width: 10%;
+                padding-left: 4rem;
+                padding-right: 0.5rem;
+            }
+
             &--img {
-                height: 1.25rem;
+                width: 7.5rem;
                 text-align: center;
 
             }
@@ -46,19 +61,25 @@ body {
 
             @include tablet {
 
-                width: 30%;
+                width: 25%;
+
+            }
+
+            @include desktop {
+                width: 10%;
 
             }
         }
 
-        &__unlist-container {
+        &__links-container {
             width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: center;
             padding: 0%;
             margin: 0%;
-            @include Subheadermobile();
+
+
 
         }
 
@@ -68,17 +89,20 @@ body {
             justify-content: center;
             @include list__anchor--decoration();
             color: $silvCinactvtext;
+            @include Subheadermobile();
 
             @include tablet {
                 width: 70%;
-                align-items: center;
+               
 
             }
 
-            &--subtitle-border {
-                @include list__anchor--decoration();
+
+
+            &--active {
                 border-bottom: 4px solid #fff;
                 color: $bandsSecCtext;
+                padding-bottom: 1rem;
 
             }
 
@@ -87,10 +111,11 @@ body {
 
 
 
-    .bio__hero {
-        background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../Assets/Images/hero-bio.jpg);
+    .hero {
+        background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.4), rgba(50, 50, 50, 0.3)), url(../Assets/Images/hero-bio.jpg);
         background-size: cover;
-        height: 15rem;
+
+        height: calc(0.60*100vw);
         width: 100%;
         background-repeat: no-repeat;
         background-position: center;
@@ -101,19 +126,34 @@ body {
             background-position: bottom;
         }
 
-        &--band-name {
+        @include desktop {
+
+            height: calc(0.49*100vw);
+            background-position: 25% 23%;
+        }
+
+        &__title {
             @include PageHeaderMobile;
             color: $bandsSecCtext ;
             position: relative;
-            top: 5.5rem;
+            top: 4rem;
             left: 1rem;
             display: inline-block;
 
             @include tablet {
                 position: relative;
-                top: 8rem;
-                left: 3rem;
-                @include SectionHeaderTablet();
+                top: 9rem;
+                left: 2rem;
+                @include pageHeaderTablet();
+            }
+
+            @include desktop {
+                position: relative;
+                top: 21rem;
+                left: 12rem;
+                
+                @include pageHeaderdesktop();
+
             }
 
         }
@@ -130,6 +170,11 @@ body {
             padding-right: 7.5rem;
             padding-left: 7.5rem;
         }
+        @include desktop { 
+            padding-right: 19rem;
+            padding-left: 19rem;
+
+        }
 
 
         &__header {
@@ -140,20 +185,27 @@ body {
                 position: relative;
                 right: 3.5rem;
             }
+            @include desktop { 
+                @include SectionHeaderdesktop();
+               
+            }
         }
 
         .biography__img {
-            background-image: linear-gradient(to right, rgba(50, 50, 50, 0.2), rgba(50, 50, 50, 0.2)), url(../Assets/Images/band.jpg);
-            height: calc(0.48*100vw);
-            background-size: cover;
-            background-position: bottom;
+            height: calc(.50*100vw);
 
             @include tablet {
                 height: calc(0.40*100vw);
-                background-size: cover;
-                background-position: center;
+
+
+            }
+            @include desktop { 
+                @include SectionHeaderdesktop();
+                height: calc(0.40*100vw);
+                background-position: 25% 40%;
             }
         }
+        
 
         &__quote {
             font-family: Avenir Next Demi;
@@ -180,11 +232,11 @@ body {
                 @include tablet {
                     font-family: Avenir Next bold;
 
-
+                    @include SubheaderTablet();
                 }
             }
 
-            &--body-text {
+            &--paragraph {
                 @include tablet {
 
                     display: flex;
@@ -210,6 +262,11 @@ body {
             padding-left: 2rem;
             padding-bottom: 1.5rem;
         }
+        @include desktop { 
+            padding-right: 13.5rem;
+            padding-left: 13.5rem;
+            
+        }
 
         &__title {
             @include SectionHeaderMobile();
@@ -234,6 +291,9 @@ body {
                 justify-content: space-between;
 
             }
+            @include desktop { 
+                justify-content: space-evenly;
+            }
 
             &--img {
                 width: 100%;
@@ -241,6 +301,9 @@ body {
 
                 @include tablet {
                     height: 8rem;
+                }
+                @include desktop { 
+                    height: 15rem;
                 }
             }
 
@@ -255,7 +318,8 @@ body {
         background-color: $bandsprimCtext;
         padding-left: 1rem;
         padding-right: 1rem;
-        @include footertext();
+
+        @include footertextmobile();
 
         @include tablet {
             @include footertextTablet();
@@ -264,8 +328,14 @@ body {
             padding-bottom: 1rem;
 
         }
+        @include desktop { 
+        
+            padding-left: 15rem;
+            padding-right: 15rem;
+            @include footertextdesktop(); 
+        }
 
-        &__section-title {
+        &__title {
             display: flex;
             @include SectionHeaderMobile();
 
@@ -274,6 +344,9 @@ body {
                 width: 45%;
                 padding-bottom: 0%;
 
+            }
+            @include desktop {
+                @include SectionHeaderdesktop();
             }
         }
 
@@ -290,6 +363,14 @@ body {
                 bottom: 1.8rem;
                 left: 14rem;
             }
+            @include desktop { 
+                position: relative;
+                bottom: 4rem;
+                left: 16.5rem;
+                width: 15%;
+                
+               
+            }
 
         }
 
@@ -300,20 +381,51 @@ body {
             @include tablet {
                 flex-direction: row;
                 justify-content: space-between;
-                width: calc(0.85*100vw);
+
+
+            }
+              @include desktop { 
+                width: calc(0.45*100vw);
+                
+               
+            }
+            
+
+
+        }
+
+        &__contacts-agents {
+            display: flex;
+            flex-direction: column;
+           
+            @include list__anchor--decoration();
+            color: $bandsSecCtext ;
+
+            @include tablet {
+                width: calc(0.29*100vw);
+
+            }
+            @include desktop { 
+               
+                
+                width: calc(0.30*100%);
+            }
+         
+
+            &--header {
+                margin-bottom: 0%;
 
             }
 
-            &--information {
+            &--subheader {
+                margin-top: 0%;
+                margin-bottom: 1rem;
+
                 @include tablet {
-                  width: calc(0.26*100vw);
-    
-                }
-            }
 
-            &--email {
-                @include list__anchor--decoration();
-                color: $bandsSecCtext ;
+                    margin-bottom: 2rem;
+                }
+
             }
 
 
@@ -322,20 +434,26 @@ body {
         &__logo {
             display: flex;
             padding-top: 2rem;
+            height: 1.25rem;
+            position: relative;
+            right: 5.2rem;
 
             @include tablet {
-                width: 25%;
+                width: 18%;
                 padding: 0%;
                 position: relative;
-                bottom: 12.2rem;
-                left: 36.5rem;
+                bottom: 15.5rem;
+                left: 36.2rem;
+            }
+            @include desktop { 
+                left: 72rem;
+                bottom: 17.5rem;
             }
 
-            &--paragraph {
-                margin-bottom: 0%;
 
-            }
         }
+
+        /*  &__paragraph {}*/
 
     }
 }

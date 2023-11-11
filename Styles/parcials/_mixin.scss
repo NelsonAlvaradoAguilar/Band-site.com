@@ -33,6 +33,8 @@
     flex-direction: column;
     margin: 0%;
 
+    
+
 
 }
 
@@ -73,7 +75,7 @@
 
 
 
-@mixin footertext {
+@mixin footertextmobile {
     font-size: 0.81rem;
     line-height: 1.125rem;
     font-family: Avenir Next Regular;
@@ -124,4 +126,38 @@
     @media screen and (min-width: $desktop-breakpoint) {
         @content;
     }
+}
+
+
+@mixin pageHeaderdesktop {
+    font-size: 5.1rem;
+    line-height: 4.25rem;
+    font-family: Avenir Next bold;
+}
+
+@mixin SectionHeaderdesktop{
+    font-size: 2.25rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+    margin: 0%;
+    line-height: 2.75rem;
+    font-family: Avenir Next bold;
+}
+
+@mixin Subheaderdesktop {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: Avenir Next Demi;
+}
+
+@mixin bodytextdesktop {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: Avenir Next Regular;
+}
+
+@mixin footertextdesktop {
+    font-size: 0.87rem;
+    line-height: 1.25rem;
+    font-family: Avenir Next Regular;
 }
