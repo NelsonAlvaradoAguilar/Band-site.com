@@ -4,11 +4,13 @@
 
 body {
     @include bodydisplay();
+    @include bodytext();
 
     @include tablet {
-    @include bodytextTablet();
+        @include bodytextTablet();
 
     }
+
 
 
     .header {
@@ -29,6 +31,8 @@ body {
 
 
 
+
+
         &__logo {
             width: 100%;
             display: flex;
@@ -43,7 +47,7 @@ body {
             }
 
             @include desktop {
-                width: 10%;
+                width: 15%;
                 padding-left: 4rem;
                 padding-right: 0.5rem;
             }
@@ -61,12 +65,12 @@ body {
 
             @include tablet {
 
-                width: 25%;
+                width: 30%;
 
             }
 
             @include desktop {
-                width: 10%;
+                width: 15%;
 
             }
         }
@@ -78,9 +82,6 @@ body {
             justify-content: center;
             padding: 0%;
             margin: 0%;
-
-
-
         }
 
         &__links {
@@ -93,7 +94,7 @@ body {
 
             @include tablet {
                 width: 70%;
-               
+
 
             }
 
@@ -112,13 +113,14 @@ body {
 
 
     .hero {
-        background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.4), rgba(50, 50, 50, 0.3)), url(../Assets/Images/hero-bio.jpg);
+        background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../Assets/Images/hero-bio.jpg);
         background-size: cover;
-
+        display: flex;
         height: calc(0.60*100vw);
         width: 100%;
         background-repeat: no-repeat;
         background-position: center;
+        align-items: center;
 
         @include tablet {
 
@@ -127,7 +129,6 @@ body {
         }
 
         @include desktop {
-
             height: calc(0.49*100vw);
             background-position: 25% 23%;
         }
@@ -136,22 +137,18 @@ body {
             @include PageHeaderMobile;
             color: $bandsSecCtext ;
             position: relative;
-            top: 4rem;
-            left: 1rem;
+            left: 0.8rem;
             display: inline-block;
 
             @include tablet {
                 position: relative;
-                top: 9rem;
-                left: 2rem;
+                left: 1.8rem;
                 @include pageHeaderTablet();
             }
 
             @include desktop {
                 position: relative;
-                top: 21rem;
-                left: 12rem;
-                
+                left: 8rem;
                 @include pageHeaderdesktop();
 
             }
@@ -166,13 +163,16 @@ body {
         padding-right: 1rem;
         padding-left: 1rem;
 
+
         @include tablet {
-            padding-right: 7.5rem;
-            padding-left: 7.5rem;
+            padding-right: 6rem;
+            padding-left: 6rem;
         }
-        @include desktop { 
-            padding-right: 19rem;
-            padding-left: 19rem;
+
+        @include desktop {
+            padding-right: 14rem;
+            padding-left: 14rem;
+            padding-bottom: 1.5rem;
 
         }
 
@@ -183,72 +183,106 @@ body {
             @include tablet {
                 @include SectionHeaderTablet();
                 position: relative;
-                right: 3.5rem;
+                right: 3.8rem;
             }
-            @include desktop { 
+
+            @include desktop {
                 @include SectionHeaderdesktop();
-               
+                position: relative;
+                right: 6rem;
             }
         }
 
-        .biography__img {
+        &__img {
             height: calc(.50*100vw);
 
             @include tablet {
-                height: calc(0.40*100vw);
-
+                height: calc(0.45*100vw);
 
             }
-            @include desktop { 
-                @include SectionHeaderdesktop();
-                height: calc(0.40*100vw);
-                background-position: 25% 40%;
-            }
+
         }
-        
 
         &__quote {
             font-family: Avenir Next Demi;
+            line-height: 1.5;
+            font-size: 0.9rem;
+
+            @include tablet {
+                font-size: 1.4rem;
+
+            }
+
+            @include desktop {
+                width: calc(.52*100vw);
+
+                line-height: 1.5;
+            }
 
             &--credit-line {
+                margin-top: 0%;
+                width: calc(.80*100vw);
+
                 @include tablet {
-                    font-family: Avenir Next Regular;
+                    font-size: 1rem;
                 }
+
+                @include desktop {
+                    font-family: Avenir Next Demi;
+
+                }
+            }
+        }
+
+        &__intro {
+            display: flex;
+            flex-direction: column;
+            padding-right: 1rem;
+            @include bodytext();
+
+            @include tablet {
+                @include bodytextTablet();
+            }
+
+            @include desktop {
+                padding-right: 0%;
+            }
+
+        }
+
+        &__intro-subtitle {
+            font-family: Avenir Next Demi;
+
+
+            @include tablet {
+                font-family: Avenir Next bold;
+
+                @include SubheaderTablet();
             }
         }
 
         &__content {
-            @include bodytext();
-
-            @include tablet {
-
-                @include bodytextTablet();
-
-            }
-
-            &--subheader {
-                @include Subheadermobile();
-
-                @include tablet {
-                    font-family: Avenir Next bold;
-
-                    @include SubheaderTablet();
-                }
-            }
+            display: flex;
+            flex-direction: column;
 
             &--paragraph {
-                @include tablet {
+                margin-top: 0%;
+            }
 
-                    display: flex;
-                    gap: 1.87rem;
+            @include tablet {
+                flex-direction: row;
+                gap: 2.3rem;
+            }
 
-
-                }
+            @include desktop {
+                gap: 1rem;
             }
 
         }
 
     }
+
+
 
     .gallery {
         background-color: $altbgcolor ;
@@ -262,10 +296,11 @@ body {
             padding-left: 2rem;
             padding-bottom: 1.5rem;
         }
-        @include desktop { 
-            padding-right: 13.5rem;
-            padding-left: 13.5rem;
-            
+
+        @include desktop {
+            padding-right: 8.5rem;
+            padding-left: 8.5rem;
+
         }
 
         &__title {
@@ -288,24 +323,34 @@ body {
 
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: space-between;
+                justify-content: space-evenly;
 
             }
-            @include desktop { 
+
+            @include desktop {
                 justify-content: space-evenly;
             }
 
             &--img {
+                filter: grayscale(100%);
                 width: 100%;
                 padding-bottom: 1rem;
 
                 @include tablet {
-                    height: 8rem;
+                    height: 7.6rem;
                 }
-                @include desktop { 
-                    height: 15rem;
+
+                @include desktop {
+                    height: 11.2rem;
                 }
             }
+
+            &--img:hover { 
+                transition: 0.5s;
+                filter: grayscale(0%);
+
+            }
+
 
         }
 
@@ -323,16 +368,17 @@ body {
 
         @include tablet {
             @include footertextTablet();
-            padding-left: 2rem;
-            padding-right: 2rem;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
             padding-bottom: 1rem;
 
         }
-        @include desktop { 
-        
-            padding-left: 15rem;
-            padding-right: 15rem;
-            @include footertextdesktop(); 
+
+        @include desktop {
+            @include footertextdesktop();
+            padding-left: 8rem;
+            padding-right: 8rem;
+
         }
 
         &__title {
@@ -345,6 +391,7 @@ body {
                 padding-bottom: 0%;
 
             }
+
             @include desktop {
                 @include SectionHeaderdesktop();
             }
@@ -354,24 +401,22 @@ body {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 40%;
-
+            width: 8rem;
             @include tablet {
-                width: 25%;
+
                 justify-content: space-around;
                 position: relative;
                 bottom: 1.8rem;
-                left: 14rem;
-            }
-            @include desktop { 
-                position: relative;
-                bottom: 4rem;
-                left: 16.5rem;
-                width: 15%;
-                
-               
+                left: 14.2rem;
             }
 
+            @include desktop {
+                position: relative;
+                bottom: 4rem;
+                left: 16rem;
+                
+
+            }
         }
 
         &__contacts {
@@ -381,23 +426,21 @@ body {
             @include tablet {
                 flex-direction: row;
                 justify-content: space-between;
+                width: 44rem;
+
+            }
+
+            @include desktop {
+                width: 48rem;
 
 
             }
-              @include desktop { 
-                width: calc(0.45*100vw);
-                
-               
-            }
-            
-
-
         }
 
         &__contacts-agents {
             display: flex;
             flex-direction: column;
-           
+
             @include list__anchor--decoration();
             color: $bandsSecCtext ;
 
@@ -405,12 +448,11 @@ body {
                 width: calc(0.29*100vw);
 
             }
-            @include desktop { 
-               
-                
-                width: calc(0.30*100%);
+
+            @include desktop {
+                width: 14rem;
             }
-         
+
 
             &--header {
                 margin-bottom: 0%;
@@ -425,35 +467,33 @@ body {
 
                     margin-bottom: 2rem;
                 }
-
             }
-
-
         }
 
         &__logo {
             display: flex;
             padding-top: 2rem;
             height: 1.25rem;
-            position: relative;
-            right: 5.2rem;
+
+            width: 7.5rem;
 
             @include tablet {
-                width: 18%;
+
                 padding: 0%;
                 position: relative;
                 bottom: 15.5rem;
-                left: 36.2rem;
+                margin-left: auto;
             }
-            @include desktop { 
-                left: 72rem;
+
+            @include desktop {
+
                 bottom: 17.5rem;
             }
-
-
         }
 
-        /*  &__paragraph {}*/
+        /* &__paragraph {
+          
+        }*/
 
     }
 }

@@ -33,7 +33,7 @@
     flex-direction: column;
     margin: 0%;
 
-    
+
 
 
 }
@@ -123,14 +123,14 @@
 }
 
 @mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
+    @media screen  and  (min-width: $desktop-breakpoint) {
         @content;
     }
 }
 
 
 @mixin pageHeaderdesktop {
-    font-size: 5.1rem;
+   font-size: 3.75rem;
     line-height: 4.25rem;
     font-family: Avenir Next bold;
 }
