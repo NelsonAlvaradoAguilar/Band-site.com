@@ -2,39 +2,35 @@
 
 @font-face {
     font-family: Avenir Next Regular;
-    src: url(../Assets/Font/AvenirNextLTPro-Regular.otf);
+    src: url(../Assets/Font/AvenirNextLTPro-Regular.otf),
+    format(otf)
+    ; font-weight: 400
 }
 
 ;
 
 @font-face {
     font-family: Avenir Next Demi;
-    src: url(../Assets/Font/AvenirNextLTPro-Demi.otf);
+    src: url(../Assets/Font/AvenirNextLTPro-Demi.otf),
+   format(otf)
+    ; font-weight: 600
 }
 
 ;
 
 @font-face {
     font-family: Avenir Next bold;
-    src: url(../Assets/Font/AvenirNextLTPro-Bold.otf);
+    src: url(../Assets/Font/AvenirNextLTPro-Bold.otf), 
+    format(otf);
+    font-weight: 700
 }
 
 ;
-@mixin hero-settings {
-  
-   
-  /*  height: calc(.20*100vh);*/
-  
-   
 
-}
 @mixin bodydisplay {
     display: flex;
     flex-direction: column;
     margin: 0%;
-
-
-
 
 }
 
@@ -47,7 +43,7 @@
 @mixin PageHeaderMobile {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-family: Avenir Next bold;
+    font-family: Avenir Next Demi;
 }
 
 
@@ -57,7 +53,7 @@
     padding-bottom: 1rem;
     margin: 0%;
     line-height: 2rem;
-    font-family: Avenir Next bold;
+    font-family: Avenir Next Demi;
 }
 
 @mixin Subheadermobile {
@@ -67,7 +63,7 @@
 }
 
 
-@mixin bodytext {
+@mixin bodytextmobile {
     font-size: 0.81rem;
     line-height: 1.125rem;
     font-family: Avenir Next Regular;
@@ -84,7 +80,7 @@
 
 
 @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
+    @media screen and (min-width: $tablet-breakpoint)  {
         @content;
     }
 }
@@ -92,7 +88,7 @@
 @mixin pageHeaderTablet {
     font-size: 3.75rem;
     line-height: 4.25rem;
-    font-family: Avenir Next bold;
+    font-family: Avenir Next Demi;
 }
 
 @mixin SectionHeaderTablet {
@@ -101,7 +97,7 @@
     padding-bottom: 2.25rem;
     margin: 0%;
     line-height: 2.75rem;
-    font-family: Avenir Next bold;
+    font-family: Avenir Next Demi;
 }
 
 @mixin SubheaderTablet {
@@ -112,7 +108,7 @@
 
 @mixin bodytextTablet {
     font-size: 0.875rem;
-    line-height: 1.375rem;
+    line-height: 1.7rem;
     font-family: Avenir Next Regular;
 }
 
@@ -123,16 +119,17 @@
 }
 
 @mixin desktop {
-    @media screen  and  (min-width: $desktop-breakpoint) {
+    @media screen  and  (min-width: $desktop-breakpoint)   {
         @content;
     }
+   
 }
 
 
 @mixin pageHeaderdesktop {
    font-size: 3.75rem;
     line-height: 4.25rem;
-    font-family: Avenir Next bold;
+    font-family: Avenir Next Demi;
 }
 
 @mixin SectionHeaderdesktop{
@@ -141,7 +138,7 @@
     padding-bottom: 2.25rem;
     margin: 0%;
     line-height: 2.75rem;
-    font-family: Avenir Next bold;
+    font-family: Avenir Next Demi;
 }
 
 @mixin Subheaderdesktop {
@@ -152,7 +149,7 @@
 
 @mixin bodytextdesktop {
     font-size: 0.875rem;
-    line-height: 1.375rem;
+    line-height: 1.5rem;
     font-family: Avenir Next Regular;
 }
 
