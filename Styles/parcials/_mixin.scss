@@ -1,4 +1,5 @@
-@import"./variables";
+@use'./variables' as * ;
+
 
 @font-face {
     font-family: Avenir Next Regular;
@@ -27,11 +28,11 @@
 
 ;
 
+
 @mixin bodydisplay {
     display: flex;
     flex-direction: column;
     margin: 0%;
-
 }
 
 @mixin list__anchor--decoration {
