@@ -28,7 +28,14 @@
 
 ;
 
-
+@mixin hero {
+    background-size: cover;
+    display: flex;
+    height: calc(0.60*100vw);
+    background-repeat: no-repeat;
+    background-position: center;
+   
+}
 @mixin bodydisplay {
     display: flex;
     flex-direction: column;
@@ -40,7 +47,28 @@
     padding-left: 0rem;
     text-decoration: none;
 }
+@mixin labelMobile{
+    font-size: 0.62rem;
+    line-height: 1.25rem;
+    font-family: Avenir Next Demi ;
+    
+}
 
+@mixin buttonMobile{
+    font-size: 0.62rem;
+    line-height: 1.25rem;
+    font-family: Avenir Next Demi ;
+    color:$bandsSecCtext ;
+    background-color:$bandsprimCtext;
+    display: flex;
+    width: calc(0.88*100vw);
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 0.60rem;
+    margin: auto;
+
+}
 @mixin PageHeaderMobile {
     font-size: 1.5rem;
     line-height: 2rem;

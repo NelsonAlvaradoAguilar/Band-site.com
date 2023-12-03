@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Avenir Next Regular;
+  src: url(../Assets/Font/AvenirNextLTPro-Regular.otf), format(otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Avenir Next Demi;
+  src: url(../Assets/Font/AvenirNextLTPro-Demi.otf), format(otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: Avenir Next bold;
+  src: url(../Assets/Font/AvenirNextLTPro-Bold.otf), format(otf);
+  font-weight: 700;
+}
+.hero {
+  background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-shows.jpg);
+  background-size: cover;
+  display: flex;
+  height: 60vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-direction: column;
+  height: 80vw;
+}
+.hero__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: Avenir Next Demi;
+  color: #FFFFFF;
+  position: relative;
+  left: 0.8rem;
+  display: inline-block;
+  width: 70vw;
+}
+.hero__legend {
+  color: #FFFFFF;
+  font-size: 0.62rem;
+  line-height: 1.25rem;
+  font-family: Avenir Next Demi;
+  position: relative;
+  left: 0.8rem;
+  top: 1rem;
+  width: 70vw;
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+.shows__subtitle {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  margin: 0%;
+  line-height: 2rem;
+  font-family: Avenir Next Demi;
+  padding: 1rem;
+}
+.shows__secondary-container {
+  border-bottom: 1px solid #E1E1E1;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__secondary-container {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+.shows__list {
+  list-style: none;
+  padding-left: 0rem;
+  text-decoration: none;
+  line-height: 2;
+}
+.shows__information {
+  color: #AFAFAF;
+}
+.shows__btnbuy {
+  font-size: 0.62rem;
+  line-height: 1.25rem;
+  font-family: Avenir Next Demi;
+  color: #FFFFFF;
+  background-color: #323232;
+  display: flex;
+  width: 88vw;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0.6rem;
+  margin: auto;
+  list-style: none;
+  padding-left: 0rem;
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .shows__btnbuy {
+    width: 20vw;
+  }
+}
+.shows__btnbuy:hover {
+  background-color: #000000;
+}/*# sourceMappingURL=shows.css.map */

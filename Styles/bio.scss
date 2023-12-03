@@ -6,14 +6,8 @@
 
 .hero {
     background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../Assets/Images/hero-bio.jpg);
-    background-size: cover;
-    display: flex;
-    height: calc(0.60*100vw);
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    @include hero ();
     align-items: center;
-
     @include tablet {
 
         height: calc(0.58*100vw);
