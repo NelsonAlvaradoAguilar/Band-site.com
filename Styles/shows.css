@@ -44,38 +44,43 @@
   width: 70vw;
 }
 
+.songToPlay {
+  display: flex;
+  position: relative;
+  bottom: auto;
+}
+
 .shows {
   display: flex;
   flex-direction: column;
   padding-bottom: 1rem;
 }
-.shows__subtitle {
+.shows__title {
   font-size: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
   margin: 0%;
   line-height: 2rem;
   font-family: Avenir Next Demi;
-  padding: 1rem;
 }
-.shows__secondary-container {
-  border-bottom: 1px solid #E1E1E1;
-  padding: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .shows__secondary-container {
-    flex-direction: row;
-    width: 100%;
-  }
-}
-.shows__list {
+.shows__tour {
   list-style: none;
-  padding-left: 0rem;
   text-decoration: none;
+  padding: 0%;
   line-height: 2;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-.shows__information {
+.shows__devider {
+  border-bottom: 1px solid #E1E1E1;
+  padding: 0.2rem;
+}
+.shows__subtitle {
+  list-style: none;
+  text-decoration: none;
+  padding: 0%;
   color: #AFAFAF;
+  line-height: 2;
 }
 .shows__btnbuy {
   font-size: 0.62rem;
@@ -91,8 +96,8 @@
   padding: 0.6rem;
   margin: auto;
   list-style: none;
-  padding-left: 0rem;
   text-decoration: none;
+  padding: 0%;
 }
 @media screen and (min-width: 768px) {
   .shows__btnbuy {

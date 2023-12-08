@@ -44,8 +44,9 @@
 
 @mixin list__anchor--decoration {
     list-style: none;
-    padding-left: 0rem;
+    
     text-decoration: none;
+    padding: 0%;
 }
 @mixin labelMobile{
     font-size: 0.62rem;

@@ -29,48 +29,52 @@
     }
 }
 
+.songToPlay {
+    display: flex;
+    position: relative;
+    bottom: auto;
+}
+
 .shows {
     display: flex;
     flex-direction: column;
+    
     padding-bottom: 1rem;
+   
 
-    &__subtitle {
+    &__title {
         @include SectionHeaderMobile ();
-        padding: 1rem;
+        
     }
 
-    &__secondary-container {
-       
-        border-bottom: 1px solid $mercrSecnCline;
-        padding: 1rem;
-        @include tablet {
-            flex-direction: row;
-            width: 100%;
-        }
-    }
-
-    &__list {
-       
+    &__tour {
         @include list__anchor--decoration();
         line-height: 2;
+        padding-left: 1rem;
+    padding-right: 1rem;
+    }
 
-        @include tablet {
-            
-           
-        }
+    &__devider {
+
+        border-bottom: 1px solid $mercrSecnCline;
+        padding: 0.2rem;
 
     }
 
-    &__information {
+
+    &__subtitle {
+        @include list__anchor--decoration();
         color: $silvCinactvtext;
+        line-height: 2;
     }
 
     &__btnbuy {
         @include buttonMobile();
         @include list__anchor--decoration();
+
         @include tablet {
-           
-            width:calc(.20*100vw);
+
+            width: calc(.20*100vw);
         }
     }
 
