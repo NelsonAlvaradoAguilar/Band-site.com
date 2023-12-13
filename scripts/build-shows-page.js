@@ -37,23 +37,31 @@ $showsContainer.classList.add('shows');
 const $title = document.createElement('h1');
 $showsContainer.appendChild($title);
 $title.insertAdjacentText('beforeend', 'Shows');
+
+
+
+
+
 let displayShows = function () {
 
 
     showsArray.forEach(e => {
 
-        const $ul = document.createElement('ul'),
+        const $divUl = document.createElement("div"),
+            $ul = document.createElement('ul'),
             $liDate = document.createElement('li'),
             $spanDate = document.createElement('span'),
             $liVenue = document.createElement('li'),
             $spanVenue = document.createElement('span'),
             $liLocation = document.createElement('li'),
             $spanLocation = document.createElement('span'),
-            $buyButton = document.createElement('a');
-          //  $devider = document.createElement("div");
+            $buyButton = document.createElement('a'),
+            $devider = document.createElement("div")
+            ;
 
-        $showsContainer.appendChild($ul);
-       
+        $showsContainer.appendChild($divUl);
+        $divUl.appendChild($ul);
+        $divUl.appendChild($devider);
         $ul.appendChild($liDate);
         $ul.appendChild($spanDate);
         $ul.appendChild($liVenue);
@@ -61,15 +69,18 @@ let displayShows = function () {
         $ul.appendChild($liLocation);
         $ul.appendChild($spanLocation);
         $ul.appendChild($buyButton);
-     //  $ul.insertAdjacentElement('afterend', $devider);
 
+        $divUl.insertAdjacentElement('afterbegin', $ul);
+        $ul.insertAdjacentElement('afterend', $buyButton);
         $liDate.insertAdjacentHTML('afterbegin', 'Date');
-        $spanDate.insertAdjacentHTML('afterbegin', `${e.date}`);
+        $spanDate.insertAdjacentHTML('afterbegin', e.date);
         $liVenue.insertAdjacentHTML('beforeend', 'Venue');
-        $spanVenue.insertAdjacentHTML('beforeend', `${e.venue}`);
+        $spanVenue.insertAdjacentHTML('beforeend', e.venue);
         $liLocation.insertAdjacentHTML('beforeend', 'Location');
-        $spanLocation.insertAdjacentHTML('beforeend', `${e.location}`);
-        $buyButton.insertAdjacentText('beforeend',"BUY TICKETS")
+        $spanLocation.insertAdjacentHTML('beforeend', e.location);
+        $buyButton.insertAdjacentText('beforeend', "BUY TICKETS");
+        $ul.insertAdjacentElement('beforeend',$buyButton)
+
         //adding classname//
         $liDate.classList.add("shows__subtitle");
         $spanDate.classList.add("shows__date-info");
@@ -80,21 +91,47 @@ let displayShows = function () {
         $liLocation.classList.add("shows__subtitle");
         $spanLocation.classList.add("shows__location-info");
 
-        $buyButton.classList.add("shows__btnbuy")
+        $buyButton.classList.add("shows__btnbuy");
 
-        $ul.classList.add("shows__tour")
-       // $devider.classList.add("shows__devider")
-        $showsContainer.appendChild($ul)
+        $ul.classList.add("shows__tour");
+        $devider.classList.add("shows__devider");
+        $divUl.classList.add("shows__list");
+
+
+        $showsContainer.appendChild($divUl);
     });
-}
+
+
+
+
+   
+    
+
+    
+};
+
+
+document.addEventListener('DOMContentLoaded',  ()=> {
+    const $showsList = document.querySelectorAll('.shows__list');
+  
+    $showsList.forEach(i => {
+      i.addEventListener('click', function () {
+       $showsList.forEach(el => el.classList.remove('shows__list--selected'));
+        i.classList.add('shows__list--selected');
+      });
+    });
+  });
+  
+
 $title.classList.add('shows__title');
 const $iframe = document.getElementById("iframe");
-$iframe.classList.add("songToPlay")
+$iframe.classList.add("hero__songToPlay");
+$iframe.setAttribute("loading","eager");
+
+
 
 
 displayShows();
-
-
 
 
 

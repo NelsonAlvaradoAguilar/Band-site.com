@@ -8,6 +8,7 @@
     background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../Assets/Images/hero-bio.jpg);
     @include hero ();
     align-items: center;
+
     @include tablet {
 
         height: calc(0.58*100vw);
@@ -237,7 +238,150 @@
 
 }
 
-.block-interaction{
-    border-bottom: 1px solid black;
-  margin-top: 1px; 
+.line-divider {
+    border-bottom: 1px solid;
+    border-color: $mercrSecnCline;
+    padding-top: 1rem;
+}
+
+
+.comments {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        @include SectionHeaderMobile();
+
+        @include tablet {
+            @include SectionHeaderTablet();
+            padding-left: 2rem;
+        }
+
+        @include desktop {
+
+
+            margin-left: 6rem;
+
+        }
+    }
+
+
+    &__form-container {
+        display: flex;
+        flex-direction: row;
+
+        gap: 20px;
+
+        @include tablet {
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+
+        @include desktop {
+            padding-left: 10rem;
+            padding-right: 10rem;
+            margin-left: 13rem;
+            margin-right: 13rem;
+        }
+
+    }
+
+    &__pic-avatar {
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        display: flex;
+        position: relative;
+        top: 1.50rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+    }
+
+    &__label {
+
+        @include labelMobile();
+        color: $silvCinactvtext;
+        margin-top: 4px;
+        margin-bottom: 4px;
+
+    }
+
+
+
+    &__field {
+        height: 36px;
+        border-radius: 4px;
+        border: 1px solid;
+        border-color: $mercrSecnCline ;
+        color: $bandsprimCtext;
+        margin-bottom: 12px;
+        background-color: $altbgcolor;
+
+        &--comments {
+            height: 80px;
+        }
+    }
+
+
+
+
+
+    &__btn-submit {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 150px;
+        align-self: flex-end;
+        @include buttonMobile();
+
+    }
+
+    &__posted {
+        margin-top: 1rem;
+    }
+
+    &__form-mockup {
+        display: flex;
+
+        gap: 20px;
+
+
+
+    }
+
+    &__avatar-pic {
+        background-color: $silvCinactvtext ;
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        position: relative;
+        top: 1rem;
+    }
+
+    &__field-paragraph {
+        width: calc(0.80*100%);
+    }
+
+    &__name-date{
+        display: flex;
+        justify-content: space-between;
+       
+    }
+
+    &__date{
+        color:$silvCinactvtext;
+    }
 }

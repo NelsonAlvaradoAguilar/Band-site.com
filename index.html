@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
     <title>BandSite</title>
     <link rel="stylesheet" href="styles/bio.css">
     <link rel="stylesheet" href="styles/global.css">
@@ -87,23 +87,31 @@
     </section>
 
     <section class="comments">
-        <h1>Join the conversation</h1>
-       
-        <div>
+        <h1 class="comments__title ">Join the conversation</h1>
 
-            <form id="commentForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Enter your name" title="name only accept letter and spaces "
-                    pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
-               <label for="comment">comment</label>
-                <textarea id="comment" placeholder="Add a new comment" pattern="^.{1,255}$" required></textarea>
+        <div class="comments__form-container">
+            <img class="comments__pic-avatar" src="assets/Images/Mohan-muruge.jpg" alt="mohan-muruge">
+            <form  id="commentsForm" class="comments__form">
 
-                <button type="submit"> Comment</button>
+                <div class="comments__input-container">
+                    <label for="name" class="comments__label">Name</label>
+                    <input type="text" name="name" id="username" class="comments__field" placeholder="Enter your name"
+                        title="name only accept letter and spaces " required>
+                </div>
+
+
+                <div class="comments__input-container">
+                    <label for="comment" class="comments__label">COMMENT</label>
+                    <input type="text" name="usertext" id="usertext" 
+                        class="comments__field comments__field--comments" placeholder="Add a new comment" required>
+
+                </div>
+                <button type="submit" id="btn-submit" class="comments__btn-submit"> COMMENT</button>
             </form>
         </div>
 
 
-        <div id="commentsContainer"></div>
+        <div id="commentsContainer" ></div>
     </section>
 
     <footer class="footer">
