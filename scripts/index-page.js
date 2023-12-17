@@ -23,16 +23,11 @@ let commentsArray = [{
 
 }
 
-
-
 ];
 
 
 const commentsContainer = document.getElementById('commentsContainer'),
     commentform = document.getElementById('commentsForm');
-
-
-const newArray = [];
 
 commentform.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -41,31 +36,30 @@ commentform.addEventListener('submit', function (event) {
 
 
     if (formNameVal !== '' && formTextVal !== '') {
-        newArray.push({
+        commentsArray.push({
             date: $timeStamp,
 
             username: formNameVal,
             usertext: formTextVal,
         });
-        renderNewComments();
+
+   
+        renderNewComments(); 
         event.target.reset();
 
     }
 
 
-
-
-    newArray.pop();
 });
-console.log(commentsArray);
+
 
 function renderNewComments() {
 
 
 
-    commentsContainer.insertAdjacentHTML('beforebegin', '');
+    commentsContainer.innerHTML='';
 
-    newArray.forEach(function (comment) {
+   commentsArray.forEach(function (comment) {
 
         const newComment = document.createElement('div'),
             $avatarPic = document.createElement('img'),
@@ -77,9 +71,9 @@ function renderNewComments() {
             $divider = document.createElement('div'),
             $nameDateC = document.createElement('div');
 
-        $date.insertAdjacentHTML('beforeend', `${comment.date}`),
-            $name.insertAdjacentHTML('afterbegin', `${comment.username} `),
-            $paragraphComment.insertAdjacentHTML('beforeend', `${comment.usertext}`);
+        $date.insertAdjacentText('afterbegin', `${comment.date}`),
+            $name.insertAdjacentText('beforeend', `${comment.username} `),
+            $paragraphComment.insertAdjacentText('beforeend', `${comment.usertext}`);
 
 
         newComment.appendChild($formMockup),
@@ -93,6 +87,8 @@ function renderNewComments() {
 
 
         commentsContainer.insertAdjacentElement('afterbegin', newComment);
+
+        
         $date.classList.add('comments__date')
         $divider.classList.add("line-divider")
         $nameDateC.classList.add('comments__name-date')
@@ -103,63 +99,9 @@ function renderNewComments() {
         $fieldParagraph.classList.add('comments__field-paragraph')
     });
 
+};
+let displaysDefault=function () {
+    renderNewComments(); 
 }
 
-
-
-let displayComments = function () {
-
-
-    commentsContainer.insertAdjacentHTML('beforeend', '');
-
-
-    commentsArray.forEach(comment => {
-
-        const commentElement = document.createElement('div'),
-            $avatarPic = document.createElement('img'),
-            $formMockup = document.createElement('div'),
-            $name = document.createElement('h1'),
-            $date = document.createElement('p'),
-            $paragraphComment = document.createElement('p'),
-            $fieldParagraph = document.createElement('div'),
-            $divider = document.createElement('div'),
-            $nameDateC = document.createElement('div');
-
-
-        $fieldParagraph.appendChild($nameDateC)
-        $nameDateC.appendChild($name),
-            $formMockup.appendChild($fieldParagraph),
-            $nameDateC.appendChild($date),
-            commentElement.appendChild($formMockup),
-            $fieldParagraph.appendChild($paragraphComment),
-            commentElement.insertAdjacentElement('afterbegin', $divider),
-            $formMockup.insertAdjacentElement('afterbegin', $avatarPic),
-            $name.insertAdjacentHTML('afterbegin', `${comment.username} `),
-            $date.insertAdjacentHTML('beforeend', `${comment.date}`),
-            $paragraphComment.insertAdjacentHTML('afterbegin', `${comment.usertext}`);
-
-
-        commentsContainer.insertAdjacentElement('beforeend',commentElement);
-        $date.classList.add('comments__date')
-        $nameDateC.classList.add('comments__name-date')
-        $divider.classList.add("line-divider")
-        $formMockup.classList.add('comments__form-mockup')
-        $avatarPic.classList.add('comments__avatar-pic')
-        commentElement.classList.add('comments__posted')
-        $fieldParagraph.classList.add('comments__field-paragraph')
-    });
-
-
-
-
-
-}
-
-
-
-displayComments();
-
-
-
-
-
+displaysDefault();
