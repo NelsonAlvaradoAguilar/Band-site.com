@@ -13,6 +13,7 @@ body {
 
     @include desktop {
         @include bodytextdesktop();
+     
     }
 
 }
@@ -100,6 +101,10 @@ body {
             @include Subheadermobile();
 
         }
+
+    }
+    &__links:hover{
+        color: $bandsSecCtext;
     }
 }
 
@@ -113,6 +118,7 @@ body {
     background-color: $bandsprimCtext;
     padding-left: 1rem;
     padding-right: 1rem;
+  
 
     @include footertextmobile();
 
@@ -128,7 +134,7 @@ body {
         @include footertextdesktop();
         padding-left: 9rem;
         padding-right: 9rem;
-
+        padding-bottom: 1.5rem;
     }
 
     &__title {

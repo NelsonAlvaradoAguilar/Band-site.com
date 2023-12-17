@@ -7,33 +7,41 @@
     background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-shows.jpg);
     @include hero ();
     flex-direction: column;
-    height: calc(0.90*100vw);
+    height: calc(0.80*100vw);
+    padding-bottom: 1.5rem;
 
     @include tablet {
-        height: calc(0.75*100vw);
-
+        height: calc(0.60*100vw);
+        background-position: 0% 55%;
+        padding-bottom: 3rem;
 
     }
 
     @include desktop {
         flex-direction: row;
         align-items: center;
-        height: calc(0.55*100vw);
-        background-position: 20% 30%;
+        height: calc(0.80*100vw);
+        background-position: 20% 40%;
+        padding-bottom: 0%;
+        gap: 10.6rem;
+
+
     }
 
     &__text {
         padding-left: 1rem;
 
         @include tablet {
-
             padding-left: 2rem;
 
         }
+
         @include desktop {
-           position: relative;
-           left: 6rem;
-           bottom: 1rem;
+            width: calc(0.40*100vw);
+            position: relative;
+
+            left: 6rem;
+            bottom: 4rem;
         }
     }
 
@@ -49,12 +57,12 @@
 
         @include tablet {
             @include pageHeaderTablet();
-
             width: calc(.79*100vw);
         }
 
         @include desktop {
             width: calc(0.38*100vw);
+
         }
 
         &--legend {
@@ -69,7 +77,8 @@
 
             @include tablet {
                 font-size: 1.5rem;
-
+                position: relative;
+                top: 3rem;
             }
         }
 
@@ -79,27 +88,32 @@
 
     &__songToPlay {
         display: flex;
-        padding-left: 1rem;
+        position: relative;
+        left: 1rem;
 
 
         width: calc(0.90*100vw);
-        height: 6.8rem;
+        height: 6.5rem;
         border-radius: 4px;
+        border-color: rgba(128, 0, 128, 0.508);
+
 
         @include tablet {
 
-            width: calc(0.50*100vw);
+            left: 2rem;
+            width: calc(0.53*100vw);
             height: 12rem;
-            
-            padding-left: 2rem;
+
+
         }
 
         @include desktop {
             position: relative;
             right: 8rem;
-            top: 1rem;
-            width: calc(0.80*100vw);
-            height: 10rem;
+            bottom: 1rem;
+            width: calc(0.30*100vw);
+            height: 8rem;
+
         }
 
     }
@@ -116,18 +130,42 @@
     @include tablet {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        padding-bottom: 2rem;
+
     }
+
+    @include desktop {
+        margin-bottom: 1rem;
+
+    }
+
+
+
+
+
 
 
 
     &__title {
         @include SectionHeaderMobile ();
         padding-left: 1rem;
+        padding-bottom: 0%;
+        width: 11rem;
+        display: inline-block;
 
         @include tablet {
 
-
+            @include SectionHeaderTablet();
             padding-left: 1rem;
+
+        }
+
+        @include desktop {
+            position: relative;
+            left: 5rem;
+            top: 5rem;
+            @include SectionHeaderdesktop();
+
         }
     }
 
@@ -137,7 +175,7 @@
         display: flex;
         flex-direction: column;
 
-        @include tablet {}
+
 
         &--selected {
             background-color: $mercrSecnCline;
@@ -168,18 +206,27 @@
         @include tablet {
             flex-direction: row;
             align-items: center;
-            height: 2rem;
+
 
 
         }
-       
+
+        @include desktop {
+            margin-left: auto;
+        }
+
+
     }
 
     &__devider {
 
         border-bottom: 1px solid $mercrSecnCline;
-        padding: 0.5rem;
 
+        @include desktop {
+            position: relative;
+            left: 17rem;
+            width: calc(0.66*100vw);
+        }
 
     }
 
@@ -203,26 +250,37 @@
             height: 0rem;
             color: $silvCinactvtext;
             font-family: Avenir Next Regular;
-            font-size: 1.2rem;
+            font-size: 1rem;
 
             @include tablet {
                 visibility: visible;
-                height: auto;
+                padding-bottom: 1rem;
+                height: 2rem;
                 display: flex;
                 flex-direction: row;
-                width: calc(0.61*100vw);
-                justify-content: space-between;
+                width: calc(0.67*100vw);
                 margin-left: 1rem;
+                font-size: 0.6rem;
+
 
             }
+
+            @include desktop {
+                position: relative;
+                left: 21rem;
+                width: calc(0.47*100vw);
+
+            }
+
+
         }
 
         &--hiden {
 
             @include tablet {
+                margin-right: 5rem;
+                width: 90px;
 
-                width: 100px;
-                text-align: start;
 
             }
         }
@@ -237,21 +295,24 @@
 
         display: flex;
 
+        @include tablet {
+            width: 140px;
+
+            margin-right: 3rem;
+        }
+
         &--date {
             font-family: Avenir Next Demi;
+            width: 150px;
 
             @include tablet {
-                width: 150px;
+
                 margin-right: 3rem;
 
             }
         }
 
-        @include tablet {
-            width: 150px;
 
-            margin-right: 3rem;
-        }
     }
 
 
@@ -263,13 +324,21 @@
         @include buttonMobile();
         @include list__anchor--decoration();
         margin-top: 1rem;
-
+        @include button();
+        width: calc(0.90*100vw);
 
         @include tablet {
 
             width: calc(.20*100vw);
             margin-left: auto;
             margin-bottom: 1rem;
+            @include buttonT-D();
+        }
+
+        @include desktop {
+            width: calc(0.10*100vw);
+            margin-left: 1rem;
+            @include buttonT-D();
         }
     }
 

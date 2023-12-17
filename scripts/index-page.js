@@ -26,8 +26,9 @@ let commentsArray = [{
 ];
 
 
-const commentsContainer = document.getElementById('commentsContainer'),
-    commentform = document.getElementById('commentsForm');
+const commentsContainer = document.getElementById('commentsContainer');
+commentsContainer.classList.add('comments-container')
+    const commentform = document.getElementById('commentsForm');
 
 commentform.addEventListener('submit', function (event) {
     event.preventDefault();

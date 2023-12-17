@@ -372,9 +372,17 @@
   color: #323232;
   margin-bottom: 12px;
   background-color: #FAFAFA;
+  transition: 0.5s;
+  outline: none;
 }
 .comments__field--comments {
   height: 80px;
+}
+.comments__field:focus {
+  border-color: #000000;
+}
+.comments__field:grammar-error {
+  border-color: red;
 }
 .comments__btn-submit {
   margin-top: 1rem;
@@ -391,7 +399,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  height: 2rem;
+  height: 2.5rem;
+  width: 9.37rem;
 }
 .comments__posted {
   margin-top: 1rem;
@@ -417,4 +426,19 @@
 }
 .comments__date {
   color: #AFAFAF;
+}
+
+@media screen and (min-width: 768px) {
+  .comments-container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments-container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-left: 13rem;
+    margin-right: 13rem;
+  }
 }/*# sourceMappingURL=bio.css.map */

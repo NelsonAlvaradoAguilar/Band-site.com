@@ -41,6 +41,7 @@
     display: flex;
     flex-direction: column;
     margin: 0%;
+    
 }
 
 @mixin list__anchor--decoration {
@@ -67,6 +68,18 @@
     font-size: 0.62rem;
     line-height: 1.25rem;
     font-family: Avenir Next Demi;
+
+}
+
+@mixin buttonT-D {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-family: Avenir Next Demi;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    
+}
+@mixin button{
     color: $bandsSecCtext ;
     background-color: $bandsprimCtext;
     display: flex;
@@ -74,10 +87,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    height: 2rem;
-
-
-
+    height: 2.5rem;
+    width: 9.37rem;
+   
 }
 
 @mixin PageHeaderMobile {

@@ -33,13 +33,13 @@ let showsArray = [{
 ]
 const subTitles = [
     {
-       subTitle: 'Date'
+       subTitle: 'DATE'
     },
     {
-        subTitle: 'Venue'
+        subTitle: 'VENUE'
     },
     {
-        subTitle: 'Location'
+        subTitle: 'LOCATION'
     }
 
 ];
