@@ -27,7 +27,7 @@ let commentsArray = [{
 
 
 const commentsContainer = document.getElementById('commentsContainer');
-commentsContainer.classList.add('comments-container')
+commentsContainer.classList.add('comments__posting-container')
     const commentform = document.getElementById('commentsForm');
 
 commentform.addEventListener('submit', function (event) {
@@ -93,10 +93,10 @@ function renderNewComments() {
         $date.classList.add('comments__date')
         $divider.classList.add("line-divider")
         $nameDateC.classList.add('comments__name-date')
-        $divider.classList.add("line-divider")
+        $divider.classList.add("comments__line-divider")
         $formMockup.classList.add('comments__form-mockup')
         $avatarPic.classList.add('comments__avatar-pic')
-        newComment.classList.add('comments__posted')
+        newComment.classList.add('comments__posted-text')
         $fieldParagraph.classList.add('comments__field-paragraph')
     });
 

@@ -20,7 +20,7 @@
     @include desktop {
         flex-direction: row;
         align-items: center;
-        height: calc(0.80*100vw);
+        height: calc(0.60*100vw);
         background-position: 20% 40%;
         padding-bottom: 0%;
         gap: 10.6rem;
@@ -85,7 +85,6 @@
     }
 
 
-
     &__songToPlay {
         display: flex;
         position: relative;
@@ -119,8 +118,6 @@
     }
 }
 
-
-
 .shows {
     display: flex;
     flex-direction: column;
@@ -138,12 +135,6 @@
         margin-bottom: 1rem;
 
     }
-
-
-
-
-
-
 
 
     &__title {
@@ -191,9 +182,6 @@
         background-color: $altbgcolor;
 
     }
-
-
-
 
     &__tour {
         display: flex;
@@ -245,49 +233,60 @@
             flex-direction: row;
         }
 
-        &--band {
-            visibility: hidden;
-            height: 0rem;
-            color: $silvCinactvtext;
-            font-family: Avenir Next Regular;
-            font-size: 1rem;
-
-            @include tablet {
-                visibility: visible;
-                padding-bottom: 1rem;
-                height: 2rem;
-                display: flex;
-                flex-direction: row;
-                width: calc(0.67*100vw);
-                margin-left: 1rem;
-                font-size: 0.6rem;
 
 
-            }
+    }
 
-            @include desktop {
-                position: relative;
-                left: 21rem;
-                width: calc(0.47*100vw);
+    &__new-subtitle {
+        visibility: hidden;
+        height: 0rem;
+        color: $silvCinactvtext;
+        font-family: Avenir Next Regular;
+        font-size: 1rem;
 
-            }
+        @include tablet {
+            visibility: visible;
+            padding-bottom: 1rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: row;
+            width: calc(0.65*100vw);
 
+            font-size: 0.6rem;
+            position: relative;
+            left: 1rem;
+
+
+
+        }
+
+        @include desktop {
+            position: relative;
+            left: 19.2rem;
+            width: calc(0.455*100vw);
 
         }
 
         &--hiden {
 
             @include tablet {
-                margin-right: 5rem;
-                width: 90px;
-
+                margin-right: 3rem;
+                width: 120px;
+                padding-left: 0.2rem;
 
             }
+            @include desktop {
+                 
+                margin-right: 4.5rem;
+             
+    
+            }
+
+           
         }
-
-
-
     }
+
+
 
 
 
@@ -297,7 +296,6 @@
 
         @include tablet {
             width: 140px;
-
             margin-right: 3rem;
         }
 
@@ -310,13 +308,11 @@
                 margin-right: 3rem;
 
             }
+            
         }
 
 
     }
-
-
-
 
 
 

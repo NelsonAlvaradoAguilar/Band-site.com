@@ -64,29 +64,17 @@ let renderTitles = function (t) {
 
 
     subTitles.forEach(t => {
-
-
         const $h3 = document.createElement('h3');
-
         $subTitleBand.appendChild($h3);
-
         $h3.insertAdjacentText('beforeend', t.subTitle);
-
-
         $showsContainer.insertAdjacentElement('beforeend', $subTitleBand);
-
-        $subTitleBand.classList.add('shows__subtitle--band')
-        $h3.classList.add('shows__subtitle--hiden')
+        $subTitleBand.classList.add('shows__new-subtitle')
+        $h3.classList.add('shows__new-subtitle--hiden')
     });
 }
 
 
 renderTitles();
-
-
-
-
-
 
 
 
@@ -121,8 +109,6 @@ let displayShows = function () {
         $ul.appendChild($buyButton);
 
 
-
-
         $divUl.insertAdjacentElement('afterbegin', $ul);
         $ul.insertAdjacentElement('afterend', $buyButton);
         $liDate.insertAdjacentHTML('afterbegin', 'Date');
@@ -153,11 +139,6 @@ let displayShows = function () {
 
         $showsContainer.appendChild($divUl);
     });
-
-
-
-
-
 
 
 

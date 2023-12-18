@@ -283,12 +283,6 @@
   filter: grayscale(0%);
 }
 
-.line-divider {
-  border-bottom: 1px solid;
-  border-color: #E1E1E1;
-  padding-top: 1rem;
-}
-
 .comments {
   padding: 1rem;
   display: flex;
@@ -381,8 +375,13 @@
 .comments__field:focus {
   border-color: #000000;
 }
-.comments__field:grammar-error {
-  border-color: red;
+.comments__field:focus ::grammar-error {
+  color: red;
+}
+.comments__line-divider {
+  border-bottom: 1px solid;
+  border-color: #E1E1E1;
+  padding-top: 1rem;
 }
 .comments__btn-submit {
   margin-top: 1rem;
@@ -402,7 +401,7 @@
   height: 2.5rem;
   width: 9.37rem;
 }
-.comments__posted {
+.comments__posted-text {
   margin-top: 1rem;
 }
 .comments__form-mockup {
@@ -427,15 +426,14 @@
 .comments__date {
   color: #AFAFAF;
 }
-
 @media screen and (min-width: 768px) {
-  .comments-container {
+  .comments__posting-container {
     padding-left: 5rem;
     padding-right: 5rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .comments-container {
+  .comments__posting-container {
     padding-left: 10rem;
     padding-right: 10rem;
     margin-left: 13rem;
