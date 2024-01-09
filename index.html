@@ -91,7 +91,7 @@
 
         <div class="comments__form-container">
             <img class="comments__pic-avatar" src="assets/Images/Mohan-muruge.jpg" alt="mohan-muruge">
-            <form  id="commentsForm" class="comments__form">
+            <form action="https://project-1-api.herokuapp.com/" id="commentsForm" class="comments__form" method="post">
 
                 <div class="comments__input-container">
                     <label for="name" class="comments__label">Name</label>
@@ -161,7 +161,9 @@
 
     </footer>
 
-    <script src="scripts/index-page.js"></script>
+    <script src="scripts/index-page.js " type="module" ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/band-site-api.js" type="module" ></script>
 
 </body>
 

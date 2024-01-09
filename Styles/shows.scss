@@ -24,8 +24,6 @@
         background-position: 20% 40%;
         padding-bottom: 0%;
         gap: 10.6rem;
-
-
     }
 
     &__text {
@@ -39,7 +37,6 @@
         @include desktop {
             width: calc(0.40*100vw);
             position: relative;
-
             left: 6rem;
             bottom: 4rem;
         }
@@ -48,9 +45,6 @@
     &__title {
         @include PageHeaderMobile;
         color: $bandsSecCtext ;
-
-
-
         display: inline-block;
         width: calc(.70*100vw);
         margin-right: auto;
@@ -62,7 +56,6 @@
 
         @include desktop {
             width: calc(0.38*100vw);
-
         }
 
         &--legend {
@@ -70,7 +63,6 @@
             color: $bandsSecCtext ;
             font-size: 0.88rem;
             position: relative;
-
             top: 1rem;
             width: calc(.70*100vw);
             margin-right: auto;
@@ -89,20 +81,16 @@
         display: flex;
         position: relative;
         left: 1rem;
-
-
         width: calc(0.90*100vw);
         height: 6.5rem;
         border-radius: 4px;
         border-color: rgba(128, 0, 128, 0.508);
-
 
         @include tablet {
 
             left: 2rem;
             width: calc(0.53*100vw);
             height: 12rem;
-
 
         }
 
@@ -121,21 +109,18 @@
 .shows {
     display: flex;
     flex-direction: column;
-
     padding-bottom: 1rem;
 
     @include tablet {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         padding-bottom: 2rem;
-
     }
 
     @include desktop {
         margin-bottom: 1rem;
 
     }
-
 
     &__title {
         @include SectionHeaderMobile ();
@@ -160,23 +145,15 @@
         }
     }
 
-
-
     &__list {
         display: flex;
         flex-direction: column;
-
-
 
         &--selected {
             background-color: $mercrSecnCline;
         }
 
-
-
     }
-
-
 
     &__list:hover {
         background-color: $altbgcolor;
@@ -195,14 +172,11 @@
             flex-direction: row;
             align-items: center;
 
-
-
         }
 
         @include desktop {
             margin-left: auto;
         }
-
 
     }
 
@@ -247,14 +221,15 @@
         @include tablet {
             visibility: visible;
             padding-bottom: 1rem;
+
             height: 2rem;
             display: flex;
-            flex-direction: row;
-            width: calc(0.65*100vw);
+            width: 28rem;
 
+            justify-content: space-between;
             font-size: 0.6rem;
             position: relative;
-            left: 1rem;
+            left: 2.5rem;
 
 
 
@@ -262,33 +237,22 @@
 
         @include desktop {
             position: relative;
-            left: 19.2rem;
+            left: 21rem;
             width: calc(0.455*100vw);
-
         }
 
         &--hiden {
 
             @include tablet {
-                margin-right: 3rem;
-                width: 120px;
-                padding-left: 0.2rem;
-
+                margin-right: 1rem;
+                width: 95px;
             }
+
             @include desktop {
-                 
-                margin-right: 4.5rem;
-             
-    
+                margin-right: auto;
             }
-
-           
         }
     }
-
-
-
-
 
     &__info {
 
@@ -304,17 +268,10 @@
             width: 150px;
 
             @include tablet {
-
                 margin-right: 3rem;
-
             }
-            
         }
-
-
     }
-
-
 
     &__btnbuy {
         @include buttonMobile();
