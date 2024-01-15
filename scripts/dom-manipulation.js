@@ -10,12 +10,10 @@ export let mainDom = (comment) => {
         paragraphComment = document.createElement('p'),
         fieldParagraph = document.createElement('div'),
         divider = document.createElement('div'),
-        nameDateC = document.createElement('div'),
-     like=document.createElement('button');
-    date.insertAdjacentText('afterbegin', `${comment.timestamp}`),
+        nameDateC = document.createElement('div');
+    date.insertAdjacentText('afterbegin', new Date(comment.timestamp).toLocaleDateString()),
         name.insertAdjacentText('beforeend', `${comment.name} `),
         paragraphComment.insertAdjacentText('beforeend', `${comment.comment}`),
-    like.insertAdjacentText('beforeend',`${comment.like}`)
     newComment.appendChild(formMockup),
         formMockup.appendChild(fieldParagraph),
         fieldParagraph.appendChild(nameDateC),
@@ -23,7 +21,6 @@ export let mainDom = (comment) => {
         nameDateC.appendChild(date),     
         formMockup.insertAdjacentElement('afterbegin', avatarPic),
         fieldParagraph.appendChild(paragraphComment),
-        fieldParagraph .appendChild(like),
         newComment.insertAdjacentElement('afterbegin', divider);
     commentsContainer.insertAdjacentElement('afterbegin', newComment);
     commentsContainer.classList.add('comments__posting-container');
@@ -69,7 +66,7 @@ export let showsDom = function (e) {
     divUl.insertAdjacentElement('afterbegin', ul);
     ul.insertAdjacentElement('afterend', buyButton);
     liDate.insertAdjacentHTML('afterbegin', 'Date');
-    spanDate.insertAdjacentHTML('afterbegin', `${e.date}`);
+    spanDate.insertAdjacentHTML('afterbegin', new Date(e.date).toLocaleDateString());
     liVenue.insertAdjacentHTML('beforeend', 'Venue');
     spanVenue.insertAdjacentHTML('beforeend', `${e.place}`);
     liLocation.insertAdjacentHTML('beforeend', 'Location');

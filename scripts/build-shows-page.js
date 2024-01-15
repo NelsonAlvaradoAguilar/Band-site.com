@@ -1,9 +1,8 @@
 
 let subTitles=['Date','Venue','Location']
+import { bandSiteApi } from "./band-site-api.js";
 
-import { BandSiteApi,apikey } from "./band-site-api.js";
 
-let getShowlist= new BandSiteApi(apikey).getShows();
 const showsContainer = document.getElementById('showsContainer');
 showsContainer.classList.add('shows')
 const title = document.createElement('h1');
@@ -27,7 +26,7 @@ const subTitleBand = document.createElement('div');
 }
 renderTitles();
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('click', () => {
     const showsList = document.querySelectorAll('.shows__list');
 
     showsList.forEach(i => {
@@ -37,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+let getShowlist= bandSiteApi.getShows();
+
 
 title.classList.add('shows__title');
 const iframe = document.getElementById("iframe");

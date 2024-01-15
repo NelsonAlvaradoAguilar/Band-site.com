@@ -1,10 +1,12 @@
-import {body} from "./classesNtools.js";
 
-import { BandSiteApi, apikey,  } from "./band-site-api.js";
-
+import { bandSiteApi } from "./band-site-api.js";
 const commentform = document.getElementById('commentsForm');
-
-
+class comment {
+    constructor(name, comment) {
+        this.name = name;
+        this.comment = comment;
+    }
+}
 commentform.addEventListener('submit', function (event) {
     event.preventDefault();
     const formNameVal = event.target.username.value;
@@ -13,10 +15,9 @@ commentform.addEventListener('submit', function (event) {
     if (formNameVal !== '' && formTextVal !== '') {
         try {
 
-            let cmment = new body(formNameVal, formTextVal);
-           
-            let api = new BandSiteApi(apikey).postComment(cmment)
-            console.log(cmment);
+            let newComment = new comment(formNameVal, formTextVal);
+            bandSiteApi.postComment(newComment)
+            console.log(newComment);
 
             event.target.reset();
         } catch (error) {
@@ -27,4 +28,5 @@ commentform.addEventListener('submit', function (event) {
 
 });
 
-let postingComments = new BandSiteApi(apikey).getComments()
+
+let CommentsPosted = bandSiteApi.getComments();

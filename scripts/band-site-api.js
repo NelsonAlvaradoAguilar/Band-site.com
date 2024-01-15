@@ -1,5 +1,5 @@
 
-import { commentsContainer, showsDom, mainDom} from "./functions.js";
+import { commentsContainer, showsDom, mainDom} from "./dom-manipulation.js";
 
 
 export const apikey = "bdce068d-52ce-42b1-8bd7-21c91e847d2f"
@@ -61,7 +61,7 @@ export class BandSiteApi {
 
 }
 
-
+export const bandSiteApi=new BandSiteApi(apikey);
 
 
 
