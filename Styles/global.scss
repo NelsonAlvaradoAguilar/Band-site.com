@@ -1,253 +1,228 @@
-@use './parcials/mixin'  as *;
-@use'./parcials/variables' as *  ;
-
+@use "./parcials/mixin" as *;
+@use "./parcials/variables" as *;
 
 body {
-    @include bodydisplay();
-    @include bodytextmobile();
+  @include bodydisplay();
+  @include bodytextmobile();
 
-    @include tablet {
-        @include bodytextTablet();
+  @include tablet {
+    @include bodytextTablet();
+  }
 
-    }
-
-    @include desktop {
-        @include bodytextdesktop();
-     
-    }
-
+  @include desktop {
+    @include bodytextdesktop();
+  }
 }
-
 
 .header {
-    background-color: $bandsprimCtext;
-    display: flex;
-    flex-direction: column;
-    padding-top: 1.5rem;
+  background-color: $bandsprimCtext;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: normal;
+  }
+
+  &__logo {
     width: 100%;
-
-    @include tablet {
-        flex-direction: row;
-        align-items: normal;
-
-    }
-
-    &__logo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding-bottom: 1rem;
-
-        &--img {
-            width: 7.5rem;
-        }
-
-        @include tablet {
-            width: 25%;
-            padding-bottom: 1.5rem;
-        }
-
-        @include desktop {
-            width: 15%;
-            padding-left: 4rem;
-            padding-right: 0.5rem;
-        }
-    }
-
-    &__nav {
-        display: flex;
-
-        @include tablet {
-            width: 30%;
-        }
-
-        @include desktop {
-            width: 15%;
-
-        }
-    }
-
-    &__links-container {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 0%;
-        margin: 0%;
-    }
-
-    &__links {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        @include list__anchor--decoration();
-        color: $silvCinactvtext;
-        font-size: 0.87rem;
-        line-height: 1.37rem;
-
-        @include tablet {
-            width: 70%;
-        }
-
-        @include desktop {
-            font-size: 1rem;
-
-        }
-
-        &--active {
-            border-bottom: 4px solid $bandsSecCtext;
-            color: $bandsSecCtext;
-            padding-bottom: 1rem;
-            @include Subheadermobile();
-
-        }
-
-    }
-    &__links:hover{
-        color: $bandsSecCtext;
-    }
-}
-
-
-
-
-.footer {
     display: flex;
-    flex-direction: column;
-    color: $bandsSecCtext ;
-    background-color: $bandsprimCtext;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  
+    justify-content: center;
+    padding-bottom: 1rem;
 
-    @include footertextmobile();
+    &--img {
+      width: 7.5rem;
+    }
 
     @include tablet {
-        @include footertextTablet();
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-        padding-bottom: 1rem;
-
+      width: 25%;
+      padding-bottom: 1.5rem;
     }
 
     @include desktop {
-        @include footertextdesktop();
-        padding-left: 9rem;
-        padding-right: 9rem;
-        padding-bottom: 1.5rem;
+      width: 15%;
+      padding-left: 4rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    @include tablet {
+      width: 30%;
     }
 
-    &__title {
-        display: flex;
-        @include SectionHeaderMobile();
+    @include desktop {
+      width: 15%;
+    }
+  }
 
-        @include tablet {
-            @include SectionHeaderTablet();
-            width: 45%;
-            padding-bottom: 0%;
+  &__links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0%;
+    margin: 0%;
+  }
 
-        }
+  &__links {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @include list__anchor--decoration();
+    color: $silvCinactvtext;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
 
-        @include desktop {
-            @include SectionHeaderdesktop();
-        }
+    @include tablet {
+      width: 70%;
     }
 
-    &__icons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 8rem;
-
-        @include tablet {
-            position: relative;
-            bottom: 1.8rem;
-            left: 15.2rem;
-        }
-
-        @include desktop {
-            position: relative;
-            bottom: 4rem;
-            left: 17.2rem;
-        }
+    @include desktop {
+      font-size: 1rem;
     }
 
-    &__contacts {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet {
-            flex-direction: row;
-            justify-content: space-between;
-            width: 44rem;
-        }
-
-        @include desktop {
-            width: 48rem;
-        }
+    &--active {
+      border-bottom: 4px solid $bandsSecCtext;
+      color: $bandsSecCtext;
+      padding-bottom: 1rem;
+      @include Subheadermobile();
     }
-
-    &__contacts-agents {
-        display: flex;
-        flex-direction: column;
-
-        @include list__anchor--decoration();
-        color: $bandsSecCtext ;
-
-        @include tablet {
-            width: calc(0.29*100vw);
-
-        }
-
-        @include desktop {
-            width: 14rem;
-        }
-
-        &--header {
-            margin-bottom: 0%;
-
-        }
-
-        &--subheader {
-            margin-top: 0%;
-            margin-bottom: 1rem;
-
-            @include tablet {
-
-                margin-bottom: 2rem;
-            }
-        }
-    }
-
-    &__logo {
-        display: flex;
-        padding-top: 2rem;
-        height: 1.25rem;
-        width: 7.5rem;
-
-        @include tablet {
-
-            padding: 0%;
-            position: relative;
-            bottom: 15.5rem;
-            margin-left: auto;
-        }
-
-        @include desktop {
-
-            bottom: 17.5rem;
-        }
-    }
-
-    &__paragraph {
-        font-size: 0.68rem;
-
-        @include tablet {
-            font-size: 0.87rem;
-
-        }
-    }
-
+  }
+  &__links:hover {
+    color: $bandsSecCtext;
+  }
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  color: $bandsSecCtext;
+  background-color: $bandsprimCtext;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
+  @include footertextmobile();
+
+  @include tablet {
+    @include footertextTablet();
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 1rem;
+  }
+
+  @include desktop {
+    @include footertextdesktop();
+    padding-left: 9rem;
+    padding-right: 9rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__title {
+    display: flex;
+    @include SectionHeaderMobile();
+
+    @include tablet {
+      @include SectionHeaderTablet();
+      width: 45%;
+      padding-bottom: 0%;
+    }
+
+    @include desktop {
+      @include SectionHeaderdesktop();
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 8rem;
+
+    @include tablet {
+      position: relative;
+      bottom: 1.8rem;
+      left: 15.2rem;
+    }
+
+    @include desktop {
+      position: relative;
+      bottom: 4rem;
+      left: 17.2rem;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 44rem;
+    }
+
+    @include desktop {
+      width: 48rem;
+    }
+  }
+
+  &__contacts-agents {
+    display: flex;
+    flex-direction: column;
+
+    @include list__anchor--decoration();
+    color: $bandsSecCtext;
+
+    @include tablet {
+      width: calc(0.29 * 100vw);
+    }
+
+    @include desktop {
+      width: 14rem;
+    }
+
+    &--header {
+      margin-bottom: 0%;
+    }
+
+    &--subheader {
+      margin-top: 0%;
+      margin-bottom: 1rem;
+
+      @include tablet {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    padding-top: 2rem;
+    height: 1.25rem;
+    width: 7.5rem;
+
+    @include tablet {
+      padding: 0%;
+      position: relative;
+      bottom: 15.5rem;
+      margin-left: auto;
+    }
+
+    @include desktop {
+      bottom: 17.5rem;
+    }
+  }
+
+  &__paragraph {
+    font-size: 0.68rem;
+
+    @include tablet {
+      font-size: 0.87rem;
+    }
+  }
+}
