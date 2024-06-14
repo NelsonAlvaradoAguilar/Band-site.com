@@ -2,8 +2,12 @@
 @use "./parcials/variables" as *;
 
 .hero {
-  background-image: 
-    url("../Assets/Images/hero-bio.jpg");
+  background-image: linear-gradient(
+      0deg,
+      rgba(221, 207, 207, 0.5),
+      rgba(50, 50, 50, 0.5)
+    ),
+    url("../Assets/Images/hero-shows.jpg");
   @include hero();
   flex-direction: column;
   height: calc(0.8 * 100vw);
