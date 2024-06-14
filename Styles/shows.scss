@@ -7,7 +7,7 @@
       rgba(50, 50, 50, 0.5),
       rgba(50, 50, 50, 0.5)
     ),
-    url(/Assets/Images/hero-shows.jpg);
+    url(../Assets/Images/hero-shows.jpg);
   @include hero();
   flex-direction: column;
   height: calc(0.8 * 100vw);
