@@ -1,301 +1,275 @@
-@use './parcials/mixin' as *;
-@use'./parcials/variables' as *;
-
+@use "./parcials/mixin" as *;
+@use "./parcials/variables" as *;
 
 .hero {
+  background-image: linear-gradient(
+      0deg,
+      rgba(50, 50, 50, 0.5),
+      rgba(50, 50, 50, 0.5)
+    ),
+    url(/Assets/Images/hero-shows.jpg);
+  @include hero();
+  flex-direction: column;
+  height: calc(0.8 * 100vw);
+  padding-bottom: 1.5rem;
 
-    background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(./Assets/Images/hero-shows.jpg);
-    @include hero ();
-    flex-direction: column;
-    height: calc(0.80*100vw);
-    padding-bottom: 1.5rem;
+  @include tablet {
+    height: calc(0.6 * 100vw);
+    background-position: 0% 55%;
+    padding-bottom: 3rem;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    align-items: center;
+    height: calc(0.6 * 100vw);
+    background-position: 20% 40%;
+    padding-bottom: 0%;
+    gap: 10.6rem;
+  }
+
+  &__text {
+    padding-left: 1rem;
 
     @include tablet {
-        height: calc(0.60*100vw);
-        background-position: 0% 55%;
-        padding-bottom: 3rem;
-
+      padding-left: 2rem;
     }
 
     @include desktop {
-        flex-direction: row;
-        align-items: center;
-        height: calc(0.60*100vw);
-        background-position: 20% 40%;
-        padding-bottom: 0%;
-        gap: 10.6rem;
+      width: calc(0.4 * 100vw);
+      position: relative;
+      left: 6rem;
+      bottom: 4rem;
+    }
+  }
+
+  &__title {
+    @include PageHeaderMobile;
+    color: $bandsSecCtext;
+    display: inline-block;
+    width: calc(0.7 * 100vw);
+    margin-right: auto;
+
+    @include tablet {
+      @include pageHeaderTablet();
+      width: calc(0.79 * 100vw);
     }
 
-    &__text {
-        padding-left: 1rem;
-
-        @include tablet {
-            padding-left: 2rem;
-
-        }
-
-        @include desktop {
-            width: calc(0.40*100vw);
-            position: relative;
-            left: 6rem;
-            bottom: 4rem;
-        }
+    @include desktop {
+      width: calc(0.38 * 100vw);
     }
 
-    &__title {
-        @include PageHeaderMobile;
-        color: $bandsSecCtext ;
-        display: inline-block;
-        width: calc(.70*100vw);
-        margin-right: auto;
+    &--legend {
+      font-family: Avenir Next Demi;
+      color: $bandsSecCtext;
+      font-size: 0.88rem;
+      position: relative;
+      top: 1rem;
+      width: calc(0.7 * 100vw);
+      margin-right: auto;
 
-        @include tablet {
-            @include pageHeaderTablet();
-            width: calc(.79*100vw);
-        }
-
-        @include desktop {
-            width: calc(0.38*100vw);
-        }
-
-        &--legend {
-            font-family: Avenir Next Demi;
-            color: $bandsSecCtext ;
-            font-size: 0.88rem;
-            position: relative;
-            top: 1rem;
-            width: calc(.70*100vw);
-            margin-right: auto;
-
-            @include tablet {
-                font-size: 1.5rem;
-                position: relative;
-                top: 3rem;
-            }
-        }
-
-    }
-
-
-    &__songToPlay {
-        display: flex;
+      @include tablet {
+        font-size: 1.5rem;
         position: relative;
-        left: 1rem;
-        width: calc(0.90*100vw);
-        height: 6.5rem;
-        border-radius: 4px;
-        border-color: rgba(128, 0, 128, 0.508);
-
-        @include tablet {
-
-            left: 2rem;
-            width: calc(0.53*100vw);
-            height: 12rem;
-
-        }
-
-        @include desktop {
-            position: relative;
-            right: 8rem;
-            bottom: 1rem;
-            width: calc(0.30*100vw);
-            height: 8rem;
-
-        }
-
+        top: 3rem;
+      }
     }
+  }
+
+  &__songToPlay {
+    display: flex;
+    position: relative;
+    left: 1rem;
+    width: calc(0.9 * 100vw);
+    height: 6.5rem;
+    border-radius: 4px;
+    border-color: rgba(128, 0, 128, 0.508);
+
+    @include tablet {
+      left: 2rem;
+      width: calc(0.53 * 100vw);
+      height: 12rem;
+    }
+
+    @include desktop {
+      position: relative;
+      right: 8rem;
+      bottom: 1rem;
+      width: calc(0.3 * 100vw);
+      height: 8rem;
+    }
+  }
 }
 
 .shows {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+
+  @include tablet {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  @include desktop {
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    @include SectionHeaderMobile();
+    padding-left: 1rem;
+    padding-bottom: 0%;
+    width: 11rem;
+    display: inline-block;
 
     @include tablet {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        padding-bottom: 2rem;
+      @include SectionHeaderTablet();
+      padding-left: 1rem;
     }
 
     @include desktop {
-        margin-bottom: 1rem;
+      position: relative;
+      left: 5rem;
+      top: 5rem;
+      @include SectionHeaderdesktop();
+    }
+  }
 
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &--selected {
+      background-color: $mercrSecnCline;
+    }
+  }
+
+  &__list:hover {
+    background-color: $altbgcolor;
+  }
+
+  &__tour {
+    display: flex;
+    flex-direction: column;
+    @include list__anchor--decoration();
+    line-height: 2;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
     }
 
-    &__title {
-        @include SectionHeaderMobile ();
-        padding-left: 1rem;
-        padding-bottom: 0%;
-        width: 11rem;
-        display: inline-block;
+    @include desktop {
+      margin-left: auto;
+    }
+  }
 
-        @include tablet {
+  &__devider {
+    border-bottom: 1px solid $mercrSecnCline;
 
-            @include SectionHeaderTablet();
-            padding-left: 1rem;
+    @include desktop {
+      position: relative;
+      left: 17rem;
+      width: calc(0.66 * 100vw);
+    }
+  }
 
-        }
+  &__subtitle {
+    @include list__anchor--decoration();
+    color: $silvCinactvtext;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
 
-        @include desktop {
-            position: relative;
-            left: 5rem;
-            top: 5rem;
-            @include SectionHeaderdesktop();
+    @include tablet {
+      visibility: hidden;
+      width: 0%;
+      flex-direction: row;
+    }
+  }
 
-        }
+  &__new-subtitle {
+    visibility: hidden;
+    height: 0rem;
+    color: $silvCinactvtext;
+    font-family: Avenir Next Regular;
+    font-size: 1rem;
+
+    @include tablet {
+      visibility: visible;
+      padding-bottom: 1rem;
+
+      height: 2rem;
+      display: flex;
+      width: 28rem;
+
+      justify-content: space-between;
+      font-size: 0.6rem;
+      position: relative;
+      left: 2.5rem;
     }
 
-    &__list {
-        display: flex;
-        flex-direction: column;
-
-        &--selected {
-            background-color: $mercrSecnCline;
-        }
-
+    @include desktop {
+      position: relative;
+      left: 21rem;
+      width: calc(0.455 * 100vw);
     }
 
-    &__list:hover {
-        background-color: $altbgcolor;
+    &--hiden {
+      @include tablet {
+        margin-right: 1rem;
+        width: 95px;
+      }
 
+      @include desktop {
+        margin-right: auto;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    @include tablet {
+      width: 140px;
+      margin-right: 3rem;
     }
 
-    &__tour {
-        display: flex;
-        flex-direction: column;
-        @include list__anchor--decoration();
-        line-height: 2;
-        padding-left: 1rem;
-        padding-right: 1rem;
+    &--date {
+      font-family: Avenir Next Demi;
+      width: 150px;
 
-        @include tablet {
-            flex-direction: row;
-            align-items: center;
+      @include tablet {
+        margin-right: 3rem;
+      }
+    }
+  }
 
-        }
+  &__btnbuy {
+    @include buttonMobile();
+    @include list__anchor--decoration();
+    margin-top: 1rem;
+    @include button();
+    width: calc(0.9 * 100vw);
 
-        @include desktop {
-            margin-left: auto;
-        }
-
+    @include tablet {
+      width: calc(0.2 * 100vw);
+      margin-left: auto;
+      margin-bottom: 1rem;
+      @include buttonT-D();
     }
 
-    &__devider {
-
-        border-bottom: 1px solid $mercrSecnCline;
-
-        @include desktop {
-            position: relative;
-            left: 17rem;
-            width: calc(0.66*100vw);
-        }
-
+    @include desktop {
+      width: calc(0.1 * 100vw);
+      margin-left: 1rem;
+      @include buttonT-D();
     }
+  }
 
-
-    &__subtitle {
-        @include list__anchor--decoration();
-        color: $silvCinactvtext;
-        line-height: 2;
-        display: flex;
-        flex-direction: column;
-
-
-        @include tablet {
-            visibility: hidden;
-            width: 0%;
-            flex-direction: row;
-        }
-
-
-
-    }
-
-    &__new-subtitle {
-        visibility: hidden;
-        height: 0rem;
-        color: $silvCinactvtext;
-        font-family: Avenir Next Regular;
-        font-size: 1rem;
-
-        @include tablet {
-            visibility: visible;
-            padding-bottom: 1rem;
-
-            height: 2rem;
-            display: flex;
-            width: 28rem;
-
-            justify-content: space-between;
-            font-size: 0.6rem;
-            position: relative;
-            left: 2.5rem;
-
-
-
-        }
-
-        @include desktop {
-            position: relative;
-            left: 21rem;
-            width: calc(0.455*100vw);
-        }
-
-        &--hiden {
-
-            @include tablet {
-                margin-right: 1rem;
-                width: 95px;
-            }
-
-            @include desktop {
-                margin-right: auto;
-            }
-        }
-    }
-
-    &__info {
-
-        display: flex;
-
-        @include tablet {
-            width: 140px;
-            margin-right: 3rem;
-        }
-
-        &--date {
-            font-family: Avenir Next Demi;
-            width: 150px;
-
-            @include tablet {
-                margin-right: 3rem;
-            }
-        }
-    }
-
-    &__btnbuy {
-        @include buttonMobile();
-        @include list__anchor--decoration();
-        margin-top: 1rem;
-        @include button();
-        width: calc(0.90*100vw);
-
-        @include tablet {
-
-            width: calc(.20*100vw);
-            margin-left: auto;
-            margin-bottom: 1rem;
-            @include buttonT-D();
-        }
-
-        @include desktop {
-            width: calc(0.10*100vw);
-            margin-left: 1rem;
-            @include buttonT-D();
-        }
-    }
-
-    &__btnbuy:hover {
-        background-color: $bandsSecnCtext;
-    }
+  &__btnbuy:hover {
+    background-color: $bandsSecnCtext;
+  }
 }
