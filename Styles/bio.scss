@@ -1,415 +1,380 @@
-@use'./parcials/mixin' as *;
-@use'./parcials/variables' as *;
-
-
-
+@use "./parcials/mixin" as *;
+@use "./parcials/variables" as *;
 
 .hero {
-    background-image: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../Assets/Images/hero-bio.jpg);
-    @include hero ();
-    align-items: center;
+  background-image: linear-gradient(
+      0deg,
+      rgba(50, 50, 50, 0.5),
+      rgba(50, 50, 50, 0.5)
+    ),
+    url(../Assets/Images/hero-bio.jpg);
+  @include hero();
+  align-items: center;
+
+  @include tablet {
+    height: calc(0.58 * 100vw);
+    background-position: bottom;
+  }
+
+  @include desktop {
+    height: calc(0.49 * 100vw);
+    background-position: 25% 23%;
+  }
+
+  &__title {
+    @include PageHeaderMobile;
+    color: $bandsSecCtext;
+    position: relative;
+    left: 0.8rem;
+    display: inline-block;
 
     @include tablet {
-
-        height: calc(0.58*100vw);
-        background-position: bottom;
+      position: relative;
+      left: 1.8rem;
+      @include pageHeaderTablet();
     }
 
     @include desktop {
-        height: calc(0.49*100vw);
-        background-position: 25% 23%;
+      position: relative;
+      left: 8rem;
+      @include pageHeaderdesktop();
     }
-
-    &__title {
-        @include PageHeaderMobile;
-        color: $bandsSecCtext ;
-        position: relative;
-        left: 0.8rem;
-        display: inline-block;
-
-        @include tablet {
-            position: relative;
-            left: 1.8rem;
-            @include pageHeaderTablet();
-
-        }
-
-        @include desktop {
-            position: relative;
-            left: 8rem;
-            @include pageHeaderdesktop();
-
-        }
-
-    }
-
+  }
 }
 
 .biography {
-    display: flex;
-    flex-direction: column;
-    padding-right: 1rem;
-    padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @include tablet {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+
+  @include desktop {
+    padding-right: 14rem;
+    padding-left: 14rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__header {
+    @include SectionHeaderMobile();
 
     @include tablet {
-        padding-right: 6rem;
-        padding-left: 6rem;
+      @include SectionHeaderTablet();
+      position: relative;
+      right: 3.8rem;
     }
 
     @include desktop {
-        padding-right: 14rem;
-        padding-left: 14rem;
-        padding-bottom: 1.5rem;
+      @include SectionHeaderdesktop();
+      position: relative;
+      right: 6rem;
+    }
+  }
 
+  &__img {
+    height: calc(0.5 * 100vw);
+
+    @include tablet {
+      height: calc(0.45 * 100vw);
+    }
+  }
+
+  &__quote {
+    font-family: Avenir Next Demi;
+    line-height: 1.5;
+    font-size: 0.9rem;
+
+    @include tablet {
+      font-size: 1.4rem;
     }
 
-    &__header {
-        @include SectionHeaderMobile();
+    @include desktop {
+      width: calc(0.52 * 100vw);
 
-        @include tablet {
-            @include SectionHeaderTablet();
-            position: relative;
-            right: 3.8rem;
-
-        }
-
-        @include desktop {
-            @include SectionHeaderdesktop();
-            position: relative;
-            right: 6rem;
-        }
+      line-height: 1.5;
     }
 
-    &__img {
-        height: calc(.50*100vw);
+    &--credit-line {
+      margin-top: 0%;
+      width: calc(0.8 * 100vw);
 
-        @include tablet {
-            height: calc(0.45*100vw);
+      @include tablet {
+        font-size: 1rem;
+      }
+    }
+  }
 
-        }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
 
+    @include tablet {
+      @include bodytextTablet();
+      padding: 0%;
     }
 
-    &__quote {
-        font-family: Avenir Next Demi;
-        line-height: 1.5;
-        font-size: 0.9rem;
+    @include desktop {
+      padding-right: 0%;
+      @include bodytextdesktop();
+    }
+  }
 
-        @include tablet {
-            font-size: 1.4rem;
-
-        }
-
-        @include desktop {
-            width: calc(.52*100vw);
-
-            line-height: 1.5;
-        }
-
-        &--credit-line {
-            margin-top: 0%;
-            width: calc(.80*100vw);
-
-            @include tablet {
-                font-size: 1rem;
-            }
-        }
+  &__subtitle {
+    @include tablet {
+      @include SubheaderTablet();
     }
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        padding-right: 1rem;
+    @include desktop {
+      @include SectionHeaderdesktop();
+    }
+  }
 
-        @include tablet {
-            @include bodytextTablet();
-            padding: 0%;
-        }
+  &__content {
+    display: flex;
+    flex-direction: column;
 
-        @include desktop {
-            padding-right: 0%;
-            @include bodytextdesktop ();
-        }
-
+    &--paragraph {
+      margin-top: 0%;
     }
 
-    &__subtitle {
-
-        @include tablet {
-
-            @include SubheaderTablet();
-        }
-
-        @include desktop {
-
-            @include SectionHeaderdesktop();
-        }
+    @include tablet {
+      flex-direction: row;
+      gap: 1.8rem;
     }
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-
-        &--paragraph {
-            margin-top: 0%;
-        }
-
-        @include tablet {
-            flex-direction: row;
-            gap: 1.8rem;
-        }
-
-        @include desktop {
-            gap: 1rem;
-        }
-
+    @include desktop {
+      gap: 1rem;
     }
-
+  }
 }
 
 .gallery {
-    background-color: $altbgcolor ;
-    display: flex;
-    flex-direction: column;
-    padding-right: 1rem;
-    padding-left: 1rem;
+  background-color: $altbgcolor;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @include tablet {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  @include desktop {
+    padding-right: 8.5rem;
+    padding-left: 8.5rem;
+  }
+
+  &__title {
+    @include SectionHeaderMobile();
+    margin: 0%;
 
     @include tablet {
-        padding-right: 2rem;
-        padding-left: 2rem;
-        padding-bottom: 1.5rem;
+      @include SectionHeaderTablet();
+      margin: 0%;
+    }
+  }
+
+  &__container {
+    @include list__anchor--decoration();
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
     }
 
     @include desktop {
-        padding-right: 8.5rem;
-        padding-left: 8.5rem;
-
+      justify-content: space-evenly;
     }
 
-    &__title {
-        @include SectionHeaderMobile();
-        margin: 0%;
+    &--img {
+      filter: grayscale(100%);
+      width: 100%;
+      padding-bottom: 1rem;
 
-        @include tablet {
-            @include SectionHeaderTablet();
-            margin: 0%;
-        }
+      @include tablet {
+        height: 7.6rem;
+      }
+
+      @include desktop {
+        height: 11.2rem;
+      }
     }
 
-    &__container {
-        @include list__anchor--decoration();
-        display: flex;
-        flex-direction: column;
-        margin: 0%;
-
-        @include tablet {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-
-        }
-
-        @include desktop {
-            justify-content: space-evenly;
-        }
-
-        &--img {
-            filter: grayscale(100%);
-            width: 100%;
-            padding-bottom: 1rem;
-
-            @include tablet {
-                height: 7.6rem;
-            }
-
-            @include desktop {
-                height: 11.2rem;
-            }
-        }
-
-        &--img:hover {
-            transition: 0.2s;
-            filter: grayscale(0%);
-
-        }
-
-
+    &--img:hover {
+      transition: 0.2s;
+      filter: grayscale(0%);
     }
-
+  }
 }
 
-
-
-
 .comments {
-    padding: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include SectionHeaderMobile();
+
+    @include tablet {
+      @include SectionHeaderTablet();
+      padding-left: 2rem;
+    }
+
+    @include desktop {
+      margin-left: 6rem;
+    }
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+
+    @include tablet {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    @include desktop {
+      padding-left: 10rem;
+      padding-right: 10rem;
+      margin-left: 13rem;
+      margin-right: 13rem;
+    }
+  }
+
+  &__pic-avatar {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    top: 1.5rem;
+  }
+
+  &__form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 
-    &__title {
-        @include SectionHeaderMobile();
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+  }
 
-        @include tablet {
-            @include SectionHeaderTablet();
-            padding-left: 2rem;
-        }
+  &__label {
+    @include labelMobile();
+    color: $silvCinactvtext;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
 
-        @include desktop {
+  &__field {
+    height: 36px;
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: $mercrSecnCline;
+    color: $bandsprimCtext;
+    margin-bottom: 12px;
+    background-color: $altbgcolor;
+    transition: 0.5s;
+    outline: none;
 
+    &--comments {
+      height: 80px;
+    }
+  }
 
-            margin-left: 6rem;
+  &__field:focus {
+    border-color: $bandsSecnCtext;
 
-        }
+    ::grammar-error {
+      color: red;
+    }
+  }
+
+  &__line-divider {
+    border-bottom: 1px solid;
+    border-color: $mercrSecnCline;
+    padding-top: 1rem;
+  }
+
+  &__btn-submit {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 150px;
+    align-self: flex-end;
+    @include buttonMobile();
+    @include button();
+  }
+
+  &__posted-text {
+    margin-top: 1rem;
+  }
+
+  &__form-mockup {
+    display: flex;
+
+    gap: 20px;
+  }
+
+  &__avatar-pic {
+    background-color: $silvCinactvtext;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    position: relative;
+    top: 1rem;
+  }
+
+  &__field-paragraph {
+    width: calc(0.8 * 100%);
+  }
+
+  &__name-date {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__date {
+    color: $silvCinactvtext;
+  }
+  &__delete-comment {
+    background-color: white;
+    border: 1px solid;
+    border-color: grey;
+
+    &:hover {
+      border: 2px dotted;
+    }
+  }
+
+  &__posting-container {
+    @include tablet {
+      padding-left: 5rem;
+      padding-right: 5rem;
     }
 
-
-    &__form-container {
-        display: flex;
-        flex-direction: row;
-
-        gap: 20px;
-
-        @include tablet {
-            padding-left: 5rem;
-            padding-right: 5rem;
-        }
-
-        @include desktop {
-            padding-left: 10rem;
-            padding-right: 10rem;
-            margin-left: 13rem;
-            margin-right: 13rem;
-        }
-
+    @include desktop {
+      padding-left: 10rem;
+      padding-right: 10rem;
+      margin-left: 13rem;
+      margin-right: 13rem;
     }
-
-    &__pic-avatar {
-        height: 48px;
-        width: 48px;
-        border-radius: 50%;
-        display: flex;
-        position: relative;
-        top: 1.50rem;
-    }
-
-    &__form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-
-
-    }
-  
-    &__input-container {
-        display: flex;
-        flex-direction: column;
-        border-radius: 4px;
-    }
-
-    &__label {
-
-        @include labelMobile();
-        color: $silvCinactvtext;
-        margin-top: 4px;
-        margin-bottom: 4px;
-
-    }
-
-
-
-    &__field {
-        height: 36px;
-        border-radius: 4px;
-        border: 1px solid;
-        border-color: $mercrSecnCline ;
-        color: $bandsprimCtext;
-        margin-bottom: 12px;
-        background-color: $altbgcolor;
-        transition: 0.5s;
-        outline: none;
-
-        &--comments {
-            height: 80px;
-        }
-
-    }
-
-    &__field:focus {
-        border-color: $bandsSecnCtext ;
-
-        ::grammar-error {
-            color: red;
-        }
-    }
-
-
-
-
-    &__line-divider {
-        border-bottom: 1px solid;
-        border-color: $mercrSecnCline;
-        padding-top: 1rem;
-    }
-
-
-    &__btn-submit {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        width: 150px;
-        align-self: flex-end;
-        @include buttonMobile();
-        @include button();
-    }
-
-    &__posted-text {
-        margin-top: 1rem;
-    }
-
-    &__form-mockup {
-        display: flex;
-
-        gap: 20px;
-
-
-
-    }
-
-    &__avatar-pic {
-        background-color: $silvCinactvtext ;
-        height: 48px;
-        width: 48px;
-        border-radius: 50%;
-        position: relative;
-        top: 1rem;
-    }
-
-    &__field-paragraph {
-        width: calc(0.80*100%);
-    }
-
-    &__name-date {
-        display: flex;
-        justify-content: space-between;
-
-    }
-
-    &__date {
-        color: $silvCinactvtext;
-    }
-
-
-    &__posting-container {
-        @include tablet {
-            padding-left: 5rem;
-            padding-right: 5rem;
-        }
-
-        @include desktop {
-            padding-left: 10rem;
-            padding-right: 10rem;
-            margin-left: 13rem;
-            margin-right: 13rem;
-        }
-    }
+  }
 }
