@@ -426,6 +426,14 @@
 .comments__date {
   color: #AFAFAF;
 }
+.comments__delete-comment {
+  background-color: white;
+  border: 1px solid;
+  border-color: grey;
+}
+.comments__delete-comment:hover {
+  border: 2px dotted;
+}
 @media screen and (min-width: 768px) {
   .comments__posting-container {
     padding-left: 5rem;

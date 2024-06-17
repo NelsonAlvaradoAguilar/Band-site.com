@@ -38,7 +38,7 @@ export let mainDom = (comment) => {
   newComment.classList.add("comments__posted-text");
   fieldParagraph.classList.add("comments__field-paragraph");
   deleteComment.classList.add("comments__delete-comment");
-
+  deleteComment.setAttribute("id", comment.id);
   return newComment;
 };
 

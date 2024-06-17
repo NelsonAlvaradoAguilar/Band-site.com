@@ -26,7 +26,8 @@ export class BandSiteApi {
       const resp = await axios.get(
         `${this.baseUrl}comments/?api_key=${this.apiKey}`
       );
-
+      const length = resp.data.length;
+      console.log(length);
       console.table(resp.data);
       commentsContainer.textContent = "";
 

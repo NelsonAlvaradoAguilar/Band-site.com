@@ -1,7 +1,7 @@
 let subTitles = ["Date", "Venue", "Location"];
 import { bandSiteApi } from "./band-site-api.js";
 
-const showsContainer = document.getElementById("showsContainer");
+export const showsContainer = document.getElementById("showsContainer");
 showsContainer.classList.add("shows");
 const title = document.createElement("h1");
 showsContainer.insertAdjacentElement("beforebegin", title);
@@ -15,7 +15,7 @@ let renderTitles = function () {
     h3.insertAdjacentText("beforeend", subTitles[i]);
     showsContainer.insertAdjacentElement("beforebegin", subTitleBand);
     subTitleBand.classList.add("shows__new-subtitle");
-    h3.classList.add("shows__new-subtitle--hiden");
+    h3.classList.add("shows__new-subtitle-hiden");
   }
 };
 renderTitles();
